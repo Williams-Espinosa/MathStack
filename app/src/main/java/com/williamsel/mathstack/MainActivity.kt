@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.williamsel.mathstack.core.navigation.AppNavHost
 import com.williamsel.mathstack.ui.theme.MathStackTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -14,7 +15,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MathStackTheme {
-                // NavHost
+                AppNavHost()
             }
         }
     }
