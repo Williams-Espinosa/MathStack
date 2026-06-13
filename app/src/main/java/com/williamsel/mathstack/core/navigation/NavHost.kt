@@ -39,7 +39,6 @@ fun AppNavHost() {
         // Tu NavGraph normal aquí
         NavGraph(navController = navController)
 
-        // Banner superpuesto
         AnimatedVisibility(
             visible = networkStatus is NetworkStatus.Lost,
             modifier = Modifier.align(Alignment.TopCenter),
