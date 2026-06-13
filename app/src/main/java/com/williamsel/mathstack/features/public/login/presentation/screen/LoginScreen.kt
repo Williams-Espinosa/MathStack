@@ -22,20 +22,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.williamsel.mathstack.features.public.login.presentation.viewmodel.LoginViewModel
 import com.williamsel.mathstack.ui.theme.*
 
-/**
- * Pantalla de login: email/password + Google Sign-In.
- *
- * Responsividad con [BoxWithConstraints]:
- * - El header ocupa entre 35–45 % del alto según el dispositivo.
- * - Paddings y tamaños de fuente escalan con el ancho/alto reales.
- * - Funciona en teléfonos pequeños (360×640), normales (412×892) y tablets.
- *
- * Correcciones vs. versión original:
- * - Eliminada dependencia de android.R (íconos del sistema poco fiables).
- * - BoxShadowBorder reemplazada por BorderStroke estándar.
- * - Agregado toggle de visibilidad de contraseña.
- * - Botón Google conectado a ViewModel.
- */
 @Composable
 fun LoginScreen(
     onLoginSuccess: () -> Unit,
@@ -52,7 +38,6 @@ fun LoginScreen(
         val altoTotal  = maxHeight
         val anchoTotal = maxWidth
 
-        // ── Proporciones adaptativas ────────────────────────────────────────
         val headerWeight   = if (altoTotal < 680.dp) 0.35f else 0.40f
         val hPad           = (anchoTotal * 0.06f).coerceIn(16.dp, 40.dp)
         val espacioNormal  = (altoTotal  * 0.025f).coerceIn(12.dp, 32.dp)
@@ -66,7 +51,6 @@ fun LoginScreen(
 
         Column(modifier = Modifier.fillMaxSize()) {
 
-            // ── HEADER azul ─────────────────────────────────────────────────
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -81,7 +65,6 @@ fun LoginScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    // Logo / ícono de la app
                     Surface(
                         modifier  = Modifier.size(logoSize),
                         color     = Color.White.copy(alpha = 0.2f),
@@ -113,7 +96,6 @@ fun LoginScreen(
                 }
             }
 
-            // ── FORMULARIO ──────────────────────────────────────────────────
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -122,7 +104,6 @@ fun LoginScreen(
             ) {
                 Spacer(modifier = Modifier.height(espacioNormal))
 
-                // Email
                 Text(
                     "Correo electrónico",
                     color      = TextoPrincipal,
@@ -143,7 +124,6 @@ fun LoginScreen(
 
                 Spacer(modifier = Modifier.height(espacioChico))
 
-                // Contraseña
                 Text(
                     "Contraseña",
                     color      = TextoPrincipal,
@@ -178,7 +158,6 @@ fun LoginScreen(
                     singleLine      = true
                 )
 
-                // Olvidé contraseña
                 TextButton(
                     onClick  = { /* TODO: navegar a recuperar contraseña */ },
                     modifier = Modifier.align(Alignment.End)
@@ -186,7 +165,6 @@ fun LoginScreen(
                     Text("¿Olvidaste tu contraseña?", color = AzulPrimario, fontSize = cuerpoSp.sp)
                 }
 
-                // Botón Iniciar sesión
                 Button(
                     onClick  = { viewModel.onLoginClick(onLoginSuccess) },
                     modifier = Modifier
@@ -213,7 +191,6 @@ fun LoginScreen(
 
                 Spacer(modifier = Modifier.height(espacioNormal))
 
-                // Divisor "o continúa con"
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     modifier          = Modifier.fillMaxWidth()
@@ -229,7 +206,6 @@ fun LoginScreen(
 
                 Spacer(modifier = Modifier.height(espacioNormal))
 
-                // Botón Google
                 OutlinedButton(
                     onClick  = { viewModel.onGoogleLoginClick(onLoginSuccess) },
                     modifier = Modifier
@@ -254,7 +230,6 @@ fun LoginScreen(
 
                 Spacer(modifier = Modifier.weight(1f))
 
-                // Pie: crear cuenta + términos
                 Column(
                     modifier              = Modifier
                         .fillMaxWidth()
