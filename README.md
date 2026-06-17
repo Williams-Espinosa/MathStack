@@ -23,7 +23,7 @@ Desarrollar una aplicación móvil de aprendizaje adaptativo que permita identif
 - 🏆 Insignias y recompensas.
 - 💰 Monedas virtuales.
 - 📈 Seguimiento de progreso.
-- 🔔 Notificaciones inteligentes.
+- 🔔 Notificaciones.
 - 👥 Retos entre usuarios.
 
 ---
@@ -51,6 +51,8 @@ Desarrollar una aplicación móvil de aprendizaje adaptativo que permita identif
 
 * Git
 * GitHub
+* Docker 
+
 
 ---
 
@@ -122,5 +124,4 @@ Este proyecto se desarrolla con fines académicos.
 
 Copyright © 2026 MathStack Team.
 
-```
 ```
