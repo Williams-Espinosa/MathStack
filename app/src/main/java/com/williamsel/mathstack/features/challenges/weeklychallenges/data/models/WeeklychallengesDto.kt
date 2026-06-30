@@ -1,5 +1,4 @@
-package com.tuapp.weeklychallenges.data.models
-
+package com.williamsel.mathstack.features.challenges.weeklychallenges.data.models
 import com.google.gson.annotations.SerializedName
 
 data class WeeklyChallengeDto(

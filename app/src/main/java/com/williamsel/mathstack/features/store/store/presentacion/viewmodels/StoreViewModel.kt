@@ -1,10 +1,10 @@
-package com.williamsel.mathstack.features.private.store.presentacion.viewmodels
+package com.williamsel.mathstack.features.store.presentacion.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.williamsel.mathstack.features.private.store.domain.entities.Store
-import com.williamsel.mathstack.features.private.store.domain.usecases.StoreUseCases
-import com.williamsel.mathstack.features.private.store.presentacion.screens.StoreUiState
+import com.williamsel.mathstack.features.store.domain.entities.Store
+import com.williamsel.mathstack.features.store.domain.usecases.StoreUseCases
+import com.williamsel.mathstack.features.store.presentacion.screens.StoreUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -20,6 +20,7 @@ class StoreViewModel @Inject constructor(
 
     private val _uiState = MutableStateFlow(StoreUiState())
     val uiState: StateFlow<StoreUiState> = _uiState.asStateFlow()
+
     private var currentStore: Store = Store(coinBalance = 0, avatars = emptyList())
 
     init {
@@ -43,14 +44,22 @@ class StoreViewModel @Inject constructor(
                 _uiState.update {
                     it.copy(
                         isLoading    = false,
-                        errorMessage = result.exceptionOrNull()?.message ?: "No se pudo cargar la tienda"
+                        errorMessage = result.exceptionOrNull()?.message
+                            ?: "No se pudo cargar la tienda"
                     )
                 }
             }
         }
     }
-
-    fun onPurchaseAvatar(avatarId: String) {
+    fun onPurchaseClick(avatarId: String) {
+        _uiState.update { it.copy(confirmingAvatarId = avatarId) }
+    }
+    fun onDismissConfirmation() {
+        _uiState.update { it.copy(confirmingAvatarId = null) }
+    }
+    fun onConfirmPurchase() {
+        val avatarId = _uiState.value.confirmingAvatarId ?: return
+        _uiState.update { it.copy(confirmingAvatarId = null) }
         viewModelScope.launch {
             _uiState.update { it.copy(processingAvatarId = avatarId, errorMessage = null) }
             val result = useCases.purchaseAvatar(currentStore, avatarId)
@@ -75,8 +84,8 @@ class StoreViewModel @Inject constructor(
             _uiState.update {
                 it.copy(
                     processingAvatarId = null,
-                    coinBalance         = store.coinBalance,
-                    avatars             = store.avatars
+                    coinBalance        = store.coinBalance,
+                    avatars            = store.avatars
                 )
             }
         } else {

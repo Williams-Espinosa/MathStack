@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.williamsel.mathstack"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.williamsel.mathstack"
@@ -41,6 +41,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 

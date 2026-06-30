@@ -1,7 +1,6 @@
-package com.tuapp.exercises.domain.repositories
-
-import com.tuapp.exercises.domain.entities.LearningPath
-import com.tuapp.exercises.domain.entities.LessonTheory
+package com.williamsel.mathstack.features.challenges.exercises.domain.repositories
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.LearningPath
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.LessonTheory
 import kotlinx.coroutines.flow.Flow
 
 interface ExercisesRepository {

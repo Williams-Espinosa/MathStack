@@ -1,9 +1,9 @@
-package com.williamsel.mathstack.features.private.store.data.repositories
+package com.williamsel.mathstack.features.store.data.repositories
 
-import com.williamsel.mathstack.features.private.store.data.datasource.api.StoreApi
-import com.williamsel.mathstack.features.private.store.data.mapper.toDomain
-import com.williamsel.mathstack.features.private.store.domain.entities.Store
-import com.williamsel.mathstack.features.private.store.domain.repositories.StoreRepository
+
+import com.williamsel.mathstack.features.store.data.datasource.api.StoreApi
+import com.williamsel.mathstack.features.store.domain.entities.Store
+import com.williamsel.mathstack.features.store.domain.repositories.StoreRepository
 import javax.inject.Inject
 
 class StoreRepositoryImpl @Inject constructor(

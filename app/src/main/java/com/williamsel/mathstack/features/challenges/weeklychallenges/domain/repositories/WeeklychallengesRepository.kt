@@ -1,6 +1,6 @@
-package com.tuapp.weeklychallenges.domain.repositories
+package com.williamsel.mathstack.features.challenges.weeklychallenges.domain.repositories
 
-import com.tuapp.weeklychallenges.domain.entities.WeeklyChallenge
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.WeeklyChallenge
 import kotlinx.coroutines.flow.Flow
 
 interface WeeklychallengesRepository {

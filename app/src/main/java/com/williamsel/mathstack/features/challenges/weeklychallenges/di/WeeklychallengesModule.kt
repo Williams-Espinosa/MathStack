@@ -1,13 +1,13 @@
-package com.tuapp.weeklychallenges.di
+package com.williamsel.mathstack.features.challenges.weeklychallenges.di
 
-import com.tuapp.weeklychallenges.data.datasource.api.WeeklychallengesApi
-import com.tuapp.weeklychallenges.data.repositories.WeeklychallengesRepositoryImpl
-import com.tuapp.weeklychallenges.domain.repositories.WeeklychallengesRepository
-import com.tuapp.weeklychallenges.domain.usecases.GetWeeklyChallengesUseCase
-import com.tuapp.weeklychallenges.domain.usecases.JoinChallengeUseCase
-import com.tuapp.weeklychallenges.domain.usecases.SaveSessionProgressUseCase
-import com.tuapp.weeklychallenges.domain.usecases.SubmitAnswerUseCase
-import com.tuapp.weeklychallenges.domain.usecases.WeeklychallengesUseCases
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.datasource.api.WeeklychallengesApi
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.repositories.WeeklychallengesRepositoryImpl
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.repositories.WeeklychallengesRepository
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.usecases.GetWeeklyChallengesUseCase
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.usecases.JoinChallengeUseCase
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.usecases.SaveSessionProgressUseCase
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.usecases.SubmitAnswerUseCase
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.usecases.WeeklychallengesUseCases
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

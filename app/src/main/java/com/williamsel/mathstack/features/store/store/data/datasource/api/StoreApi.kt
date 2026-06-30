@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.store.data.datasource.api
+package com.williamsel.mathstack.features.store.data.datasource.api
 
 import com.williamsel.mathstack.features.private.store.data.models.StoreDto
 import retrofit2.http.GET

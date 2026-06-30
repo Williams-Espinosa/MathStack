@@ -1,11 +1,11 @@
-package com.tuapp.weeklychallenges.data.repositories
+package com.williamsel.mathstack.features.challenges.weeklychallenges.data.repositories
 
-import com.tuapp.weeklychallenges.data.datasource.api.SaveProgressRequestBody
-import com.tuapp.weeklychallenges.data.datasource.api.SubmitAnswerRequestBody
-import com.tuapp.weeklychallenges.data.datasource.api.WeeklychallengesApi
-import com.tuapp.weeklychallenges.data.mapper.toDomain
-import com.tuapp.weeklychallenges.domain.entities.WeeklyChallenge
-import com.tuapp.weeklychallenges.domain.repositories.WeeklychallengesRepository
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.datasource.api.SaveProgressRequestBody
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.datasource.api.SubmitAnswerRequestBody
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.datasource.api.WeeklychallengesApi
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.mapper.toDomain
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.WeeklyChallenge
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.repositories.WeeklychallengesRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

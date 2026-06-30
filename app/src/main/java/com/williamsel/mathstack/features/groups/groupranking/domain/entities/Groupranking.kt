@@ -1,6 +1,5 @@
 package com.williamsel.mathstack.features.private.groupranking.domain.entities
 
-// ── Group Ranking ─────────────────────────────────────────────────────────────
 
 data class GroupRanking(
     val groupInfo: GroupInfo,
@@ -29,7 +28,6 @@ data class GroupMemberRank(
     val badge: RankBadge
 )
 
-// ── Global Ranking ────────────────────────────────────────────────────────────
 
 data class GlobalRanking(
     val players: List<GlobalPlayerRank>,

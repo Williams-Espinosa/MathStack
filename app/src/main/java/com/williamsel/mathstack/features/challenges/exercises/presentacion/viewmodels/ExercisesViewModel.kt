@@ -1,14 +1,14 @@
-package com.tuapp.exercises.presentacion.viewmodels
+package com.williamsel.mathstack.features.challenges.exercises.presentacion.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tuapp.exercises.domain.entities.ExerciseSession
-import com.tuapp.exercises.domain.entities.Lesson
-import com.tuapp.exercises.domain.usecases.ExercisesUseCases
-import com.tuapp.exercises.presentacion.screens.CheckResult
-import com.tuapp.exercises.presentacion.screens.ExerciseUiState
-import com.tuapp.exercises.presentacion.screens.LearningPathUiState
-import com.tuapp.exercises.presentacion.screens.TheoryUiState
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.ExerciseSession
+import com.williamsel.mathstack.features.challenges.exercises.domain.entities.Lesson
+import  com.williamsel.mathstack.features.challenges.exercises.domain.usecases.ExercisesUseCases
+import   com.williamsel.mathstack.features.challenges.exercises.presentacion.screens.CheckResult
+import  com.williamsel.mathstack.features.challenges.exercises.presentacion.screens.ExerciseUiState
+import  com.williamsel.mathstack.features.challenges.exercises.presentacion.screens.LearningPathUiState
+import  com.williamsel.mathstack.features.challenges.exercises.presentacion.screens.TheoryUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

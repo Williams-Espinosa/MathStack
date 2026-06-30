@@ -1,7 +1,7 @@
-package com.tuapp.weeklychallenges.domain.usecases
+package com.williamsel.mathstack.features.challenges.weeklychallenges.domain.usecases
 
-import com.tuapp.weeklychallenges.domain.entities.WeeklyChallenge
-import com.tuapp.weeklychallenges.domain.repositories.WeeklychallengesRepository
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.WeeklyChallenge
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.repositories.WeeklychallengesRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

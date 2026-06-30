@@ -1,5 +1,4 @@
-package com.tuapp.exercises.data.models
-
+package com.williamsel.mathstack.features.challenges.exercises.data.models
 import com.google.gson.annotations.SerializedName
 
 data class LearningPathDto(

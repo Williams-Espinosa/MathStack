@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.store.domain.usecases
+package com.williamsel.mathstack.features.store.domain.usecases
 
-import com.williamsel.mathstack.features.private.store.domain.entities.Store
-import com.williamsel.mathstack.features.private.store.domain.repositories.StoreRepository
+import com.williamsel.mathstack.features.store.domain.entities.Store
+import com.williamsel.mathstack.features.store.domain.repositories.StoreRepository
 import javax.inject.Inject
 class GetStoreUseCase @Inject constructor(
     private val repository: StoreRepository

@@ -1,12 +1,13 @@
 package com.tuapp.exercises.data.repositories
 
-import com.tuapp.exercises.data.datasource.api.CheckAnswerRequestBody
-import com.tuapp.exercises.data.datasource.api.CompleteLessonRequestBody
-import com.tuapp.exercises.data.datasource.api.ExercisesApi
 import com.tuapp.exercises.data.mapper.toDomain
-import com.tuapp.exercises.domain.entities.LearningPath
-import com.tuapp.exercises.domain.entities.LessonTheory
-import com.tuapp.exercises.domain.repositories.ExercisesRepository
+import com.williamsel.mathstack.features.challenges.exercises.data.datasource.api.CheckAnswerRequestBody
+import  com.williamsel.mathstack.features.challenges.exercises.data.datasource.api.CompleteLessonRequestBody
+import com.williamsel.mathstack.features.challenges.exercises.data.datasource.api.ExercisesApi
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.LearningPath
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.LessonTheory
+import com.williamsel.mathstack.features.challenges.exercises.domain.repositories.ExercisesRepository
+
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

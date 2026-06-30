@@ -1,7 +1,7 @@
-package com.tuapp.weeklychallenges.presentacion.screens
+package com.williamsel.mathstack.features.challenges.weeklychallenges.presentacion.screens
 
-import com.tuapp.weeklychallenges.domain.entities.ChallengeSession
-import com.tuapp.weeklychallenges.domain.entities.WeeklyChallenge
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.ChallengeSession
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.WeeklyChallenge
 
 
 sealed interface WeeklychallengesUiState {

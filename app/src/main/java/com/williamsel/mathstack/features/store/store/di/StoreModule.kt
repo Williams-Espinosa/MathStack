@@ -1,12 +1,12 @@
 package com.williamsel.mathstack.features.private.store.di
 
-import com.williamsel.mathstack.features.private.store.data.datasource.api.StoreApi
-import com.williamsel.mathstack.features.private.store.data.repositories.StoreRepositoryImpl
-import com.williamsel.mathstack.features.private.store.domain.repositories.StoreRepository
-import com.williamsel.mathstack.features.private.store.domain.usecases.EquipAvatarUseCase
-import com.williamsel.mathstack.features.private.store.domain.usecases.GetStoreUseCase
-import com.williamsel.mathstack.features.private.store.domain.usecases.PurchaseAvatarUseCase
-import com.williamsel.mathstack.features.private.store.domain.usecases.StoreUseCases
+import com.williamsel.mathstack.features.store.data.datasource.api.StoreApi
+import com.williamsel.mathstack.features.store.data.repositories.StoreRepositoryImpl
+import com.williamsel.mathstack.features.store.domain.repositories.StoreRepository
+import com.williamsel.mathstack.features.store.domain.usecases.EquipAvatarUseCase
+import com.williamsel.mathstack.features.store.domain.usecases.GetStoreUseCase
+import com.williamsel.mathstack.features.store.domain.usecases.PurchaseAvatarUseCase
+import com.williamsel.mathstack.features.store.domain.usecases.StoreUseCases
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

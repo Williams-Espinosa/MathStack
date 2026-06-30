@@ -1,16 +1,16 @@
 package com.tuapp.exercises.data.mapper
 
-import com.tuapp.exercises.data.models.ExerciseDto
-import com.tuapp.exercises.data.models.LearningPathDto
-import com.tuapp.exercises.data.models.LessonDto
-import com.tuapp.exercises.data.models.LessonTheoryDto
-import com.tuapp.exercises.data.models.TheorySectionDto
-import com.tuapp.exercises.domain.entities.Exercise
-import com.tuapp.exercises.domain.entities.LearningPath
-import com.tuapp.exercises.domain.entities.Lesson
-import com.tuapp.exercises.domain.entities.LessonStatus
-import com.tuapp.exercises.domain.entities.LessonTheory
-import com.tuapp.exercises.domain.entities.TheorySection
+import  com.williamsel.mathstack.features.challenges.exercises.data.models.ExerciseDto
+import  com.williamsel.mathstack.features.challenges.exercises.data.models.LearningPathDto
+import  com.williamsel.mathstack.features.challenges.exercises.data.models.LessonDto
+import  com.williamsel.mathstack.features.challenges.exercises.data.models.LessonTheoryDto
+import  com.williamsel.mathstack.features.challenges.exercises.data.models.TheorySectionDto
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.Exercise
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.LearningPath
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.Lesson
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.LessonTheory
+import com.williamsel.mathstack.features.challenges.exercises.domain.entities.LessonStatus
+import com.williamsel.mathstack.features.challenges.exercises.domain.entities.TheorySection
 
 fun LearningPathDto.toDomain(): LearningPath = LearningPath(
     id               = id,

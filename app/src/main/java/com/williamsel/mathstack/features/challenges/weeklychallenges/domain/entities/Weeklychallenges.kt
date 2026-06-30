@@ -1,4 +1,4 @@
-package com.tuapp.weeklychallenges.domain.entities
+package com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities
 
 data class WeeklyChallenge(
     val id: String,
@@ -8,7 +8,7 @@ data class WeeklyChallenge(
     val durationDays: Int,
     val coins: Int,
     val xp: Int,
-    val progress: Float,           // 0.0 – 1.0
+    val progress: Float,
     val participants: Int,
     val isJoined: Boolean,
     val exercises: List<ChallengeExercise>
@@ -16,15 +16,15 @@ data class WeeklyChallenge(
 
 data class ChallengeExercise(
     val id: String,
-    val questionLatex: String,     // LaTeX string, e.g. "3x - 7 = 14"
+    val questionLatex: String,
     val options: List<ExerciseOption>,
     val hintLatex: String? = null
 )
 
 data class ExerciseOption(
     val id: String,
-    val label: String,             // "A", "B", "C", "D"
-    val textLatex: String,         // LaTeX, e.g. "x = 7"
+    val label: String,
+    val textLatex: String,
     val isCorrect: Boolean
 )
 
@@ -37,7 +37,7 @@ enum class ChallengeDifficulty(val label: String) {
 data class ChallengeSession(
     val challenge: WeeklyChallenge,
     val currentExerciseIndex: Int = 0,
-    val answers: Map<String, String> = emptyMap(),  // exerciseId -> optionId
+    val answers: Map<String, String> = emptyMap(),
     val earnedXp: Int = 0,
     val earnedCoins: Int = 0,
     val isFinished: Boolean = false

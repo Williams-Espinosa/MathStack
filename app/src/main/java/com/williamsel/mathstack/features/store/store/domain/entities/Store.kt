@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.store.domain.entities
+package com.williamsel.mathstack.features.store.domain.entities
 
 data class Store(
     val coinBalance: Int,

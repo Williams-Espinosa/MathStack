@@ -4,8 +4,16 @@ import kotlinx.serialization.Serializable
 
 sealed interface Route {
     @Serializable
-    object Home : Route
-
+    data object Login : Route
+    
     @Serializable
-    object Login : Route
+    data object Register : Route
+    @Serializable
+    data object Home : Route
+    @Serializable
+    data object Groups : Route
+    @Serializable
+    data object CreateGroup : Route
+    @Serializable
+    data class GroupDetails(val groupId: String) : Route
 }

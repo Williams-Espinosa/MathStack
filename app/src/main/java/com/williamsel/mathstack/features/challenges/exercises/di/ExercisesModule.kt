@@ -1,13 +1,12 @@
-package com.tuapp.exercises.di
-
-import com.tuapp.exercises.data.datasource.api.ExercisesApi
+package com.williamsel.mathstack.features.challenges.exercises.di
 import com.tuapp.exercises.data.repositories.ExercisesRepositoryImpl
-import com.tuapp.exercises.domain.repositories.ExercisesRepository
-import com.tuapp.exercises.domain.usecases.CheckAnswerUseCase
-import com.tuapp.exercises.domain.usecases.CompleteLessonUseCase
-import com.tuapp.exercises.domain.usecases.ExercisesUseCases
-import com.tuapp.exercises.domain.usecases.GetLearningPathUseCase
-import com.tuapp.exercises.domain.usecases.GetLessonTheoryUseCase
+import  com.williamsel.mathstack.features.challenges.exercises.data.datasource.api.ExercisesApi
+import  com.williamsel.mathstack.features.challenges.exercises.domain.repositories.ExercisesRepository
+import  com.williamsel.mathstack.features.challenges.exercises.domain.usecases.CheckAnswerUseCase
+import  com.williamsel.mathstack.features.challenges.exercises.domain.usecases.CompleteLessonUseCase
+import  com.williamsel.mathstack.features.challenges.exercises.domain.usecases.ExercisesUseCases
+import  com.williamsel.mathstack.features.challenges.exercises.domain.usecases.GetLearningPathUseCase
+import  com.williamsel.mathstack.features.challenges.exercises.domain.usecases.GetLessonTheoryUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

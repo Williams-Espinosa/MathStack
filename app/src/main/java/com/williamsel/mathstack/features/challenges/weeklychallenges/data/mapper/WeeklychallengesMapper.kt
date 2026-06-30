@@ -1,12 +1,12 @@
-package com.tuapp.weeklychallenges.data.mapper
+package com.williamsel.mathstack.features.challenges.weeklychallenges.data.mapper
 
-import com.tuapp.weeklychallenges.data.models.ChallengeExerciseDto
-import com.tuapp.weeklychallenges.data.models.ExerciseOptionDto
-import com.tuapp.weeklychallenges.data.models.WeeklyChallengeDto
-import com.tuapp.weeklychallenges.domain.entities.ChallengeDifficulty
-import com.tuapp.weeklychallenges.domain.entities.ChallengeExercise
-import com.tuapp.weeklychallenges.domain.entities.ExerciseOption
-import com.tuapp.weeklychallenges.domain.entities.WeeklyChallenge
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.models.ChallengeExerciseDto
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.models.ExerciseOptionDto
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.models.WeeklyChallengeDto
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.ChallengeExercise
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.ExerciseOption
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.WeeklyChallenge
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.ChallengeDifficulty
 
 fun WeeklyChallengeDto.toDomain(): WeeklyChallenge = WeeklyChallenge(
     id           = id,

@@ -1,10 +1,11 @@
-package com.tuapp.exercises.presentacion.screens
+package com.williamsel.mathstack.features.challenges.exercises.presentacion.screens
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -21,8 +22,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.LightbulbOutline
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.outlined.Lightbulb
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Timer
 import androidx.compose.material3.*
@@ -43,15 +44,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.tuapp.exercises.domain.entities.Lesson
-import com.tuapp.exercises.domain.entities.LessonStatus
-import com.tuapp.exercises.domain.entities.TheorySection
-import com.tuapp.exercises.presentacion.viewmodels.ExercisesViewModel
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.Lesson
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.LessonStatus
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.TheorySection
+import  com.williamsel.mathstack.features.challenges.exercises.presentacion.viewmodels.ExercisesViewModel
 import ru.noties.jlatexmath.JLatexMathDrawable
-
-// ─────────────────────────────────────────────────────────────────────────────
-//  Design tokens
-// ─────────────────────────────────────────────────────────────────────────────
 
 private val BluePrimary   = Color(0xFF3D5AFE)
 private val BlueLight     = Color(0xFFEEF1FF)
@@ -450,7 +447,7 @@ private fun ReadyBanner(onStart: () -> Unit) {
                 modifier = Modifier.fillMaxWidth(),
                 shape  = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.White),
-                border = androidx.compose.foundation.BorderStroke(1.5.dp, Color.White)
+                border = BorderStroke(1.5.dp, Color.White)
             ) {
                 Text("Comenzar ejercicios", fontWeight = FontWeight.SemiBold)
                 Spacer(Modifier.width(6.dp))
@@ -576,7 +573,7 @@ private fun ActiveExercise(
                         colors = CardDefaults.cardColors(containerColor = BlueLight)
                     ) {
                         Row(Modifier.padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
-                            Icon(Icons.Default.LightbulbOutline, null,
+                            Icon(Icons.Outlined.Lightbulb, null,
                                 tint = BluePrimary, modifier = Modifier.size(18.dp))
                             Spacer(Modifier.width(8.dp))
                             Column {
@@ -637,7 +634,7 @@ private fun ActiveExercise(
                         onClick  = { viewModel.toggleHint() },
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        Icon(Icons.Default.LightbulbOutline, null, Modifier.size(16.dp))
+                        Icon(Icons.Outlined.Lightbulb, null, Modifier.size(16.dp))
                         Spacer(Modifier.width(4.dp))
                         Text("Ver pista")
                     }

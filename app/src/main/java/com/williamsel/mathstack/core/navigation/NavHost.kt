@@ -36,7 +36,6 @@ fun AppNavHost() {
     val networkStatus by connectivityVm.networkStatus.collectAsStateWithLifecycle()
 
     Box(modifier = Modifier.fillMaxSize()) {
-        // Tu NavGraph normal aquí
         NavGraph(navController = navController)
 
         AnimatedVisibility(

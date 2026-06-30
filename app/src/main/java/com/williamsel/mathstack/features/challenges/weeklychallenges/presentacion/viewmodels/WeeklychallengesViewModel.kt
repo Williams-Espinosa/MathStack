@@ -1,19 +1,18 @@
-package com.tuapp.weeklychallenges.presentacion.viewmodels
+package com.williamsel.mathstack.features.challenges.weeklychallenges.presentacion.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tuapp.weeklychallenges.domain.entities.ChallengeSession
-import com.tuapp.weeklychallenges.domain.entities.WeeklyChallenge
-import com.tuapp.weeklychallenges.domain.usecases.WeeklychallengesUseCases
-import com.tuapp.weeklychallenges.presentacion.screens.AnswerResult
-import com.tuapp.weeklychallenges.presentacion.screens.ExerciseUiState
-import com.tuapp.weeklychallenges.presentacion.screens.WeeklychallengesUiState
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.ChallengeSession
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.entities.WeeklyChallenge
+import com.williamsel.mathstack.features.challenges.weeklychallenges.domain.usecases.WeeklychallengesUseCases
+import com.williamsel.mathstack.features.challenges.weeklychallenges.presentacion.screens.AnswerResult
+import com.williamsel.mathstack.features.challenges.weeklychallenges.presentacion.screens.ExerciseUiState
+import com.williamsel.mathstack.features.challenges.weeklychallenges.presentacion.screens.WeeklychallengesUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

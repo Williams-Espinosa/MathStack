@@ -1,8 +1,7 @@
-package com.tuapp.exercises.data.datasource.api
-
-import com.tuapp.exercises.data.models.CheckAnswerResponseDto
-import com.tuapp.exercises.data.models.LearningPathDto
-import com.tuapp.exercises.data.models.LessonTheoryDto
+package com.williamsel.mathstack.features.challenges.exercises.data.datasource.api
+import  com.williamsel.mathstack.features.challenges.exercises.data.models.CheckAnswerResponseDto
+import  com.williamsel.mathstack.features.challenges.exercises.data.models.LearningPathDto
+import  com.williamsel.mathstack.features.challenges.exercises.data.models.LessonTheoryDto
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

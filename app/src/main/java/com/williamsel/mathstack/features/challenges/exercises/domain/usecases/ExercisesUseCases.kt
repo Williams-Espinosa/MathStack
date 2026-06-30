@@ -1,8 +1,7 @@
-package com.tuapp.exercises.domain.usecases
-
-import com.tuapp.exercises.domain.entities.LearningPath
-import com.tuapp.exercises.domain.entities.LessonTheory
-import com.tuapp.exercises.domain.repositories.ExercisesRepository
+package com.williamsel.mathstack.features.challenges.exercises.domain.usecases
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.LearningPath
+import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.LessonTheory
+import  com.williamsel.mathstack.features.challenges.exercises.domain.repositories.ExercisesRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

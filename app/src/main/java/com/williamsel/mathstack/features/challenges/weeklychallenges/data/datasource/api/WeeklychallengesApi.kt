@@ -1,8 +1,8 @@
-package com.tuapp.weeklychallenges.data.datasource.api
+package com.williamsel.mathstack.features.challenges.weeklychallenges.data.datasource.api
 
-import com.tuapp.weeklychallenges.data.models.JoinChallengeResponseDto
-import com.tuapp.weeklychallenges.data.models.SubmitAnswerResponseDto
-import com.tuapp.weeklychallenges.data.models.WeeklyChallengeDto
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.models.JoinChallengeResponseDto
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.models.SubmitAnswerResponseDto
+import com.williamsel.mathstack.features.challenges.weeklychallenges.data.models.WeeklyChallengeDto
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

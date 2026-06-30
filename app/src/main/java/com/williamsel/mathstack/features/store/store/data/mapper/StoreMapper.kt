@@ -1,9 +1,9 @@
-package com.williamsel.mathstack.features.private.store.data.mapper
+package com.williamsel.mathstack.features.store.data.mapper
 
-import com.williamsel.mathstack.features.private.store.data.models.AvatarDto
-import com.williamsel.mathstack.features.private.store.data.models.StoreDto
-import com.williamsel.mathstack.features.private.store.domain.entities.Avatar
-import com.williamsel.mathstack.features.private.store.domain.entities.Store
+import com.williamsel.mathstack.features.store.data.models.AvatarDto
+import com.williamsel.mathstack.features.store.data.models.StoreDto
+import com.williamsel.mathstack.features.store.domain.entities.Avatar
+import com.williamsel.mathstack.features.store.domain.entities.Store
 
 fun StoreDto.toDomain(): Store = Store(
     coinBalance = coinBalance,
