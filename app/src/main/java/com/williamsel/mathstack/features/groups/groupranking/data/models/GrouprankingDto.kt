@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.groupranking.data.models
+package com.williamsel.mathstack.features.groupranking.data.models
 
 import com.google.gson.annotations.SerializedName
 

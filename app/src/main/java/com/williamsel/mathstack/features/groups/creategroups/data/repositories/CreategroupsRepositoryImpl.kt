@@ -1,11 +1,11 @@
-package com.williamsel.mathstack.features.private.creategroups.data.repositories
+package com.williamsel.mathstack.features.creategroups.data.repositories
 
-import com.williamsel.mathstack.features.private.creategroups.data.datasource.api.CreategroupsApi
-import com.williamsel.mathstack.features.private.creategroups.data.mapper.toDomain
-import com.williamsel.mathstack.features.private.creategroups.data.mapper.toDto
-import com.williamsel.mathstack.features.private.creategroups.domain.entities.CreateGroupParams
-import com.williamsel.mathstack.features.private.creategroups.domain.entities.CreatedGroup
-import com.williamsel.mathstack.features.private.creategroups.domain.repositories.CreategroupsRepository
+import com.williamsel.mathstack.features.creategroups.data.datasource.api.CreategroupsApi
+import com.williamsel.mathstack.features.creategroups.data.mapper.toDomain
+import com.williamsel.mathstack.features.creategroups.data.mapper.toDto
+import com.williamsel.mathstack.features.creategroups.domain.entities.CreateGroupParams
+import com.williamsel.mathstack.features.creategroups.domain.entities.CreatedGroup
+import com.williamsel.mathstack.features.creategroups.domain.repositories.CreategroupsRepository
 import javax.inject.Inject
 
 class CreategroupsRepositoryImpl @Inject constructor(

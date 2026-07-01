@@ -1,12 +1,12 @@
-package com.williamsel.mathstack.features.private.settings.di
+package com.williamsel.mathstack.features.settings.di
 
-import com.williamsel.mathstack.features.private.settings.data.datasource.api.SettingsApi
-import com.williamsel.mathstack.features.private.settings.data.repositories.SettingsRepositoryImpl
-import com.williamsel.mathstack.features.private.settings.domain.repositories.SettingsRepository
-import com.williamsel.mathstack.features.private.settings.domain.usecases.GetSettingsUseCase
-import com.williamsel.mathstack.features.private.settings.domain.usecases.LogoutUseCase
-import com.williamsel.mathstack.features.private.settings.domain.usecases.SettingsUseCases
-import com.williamsel.mathstack.features.private.settings.domain.usecases.UpdateSettingsUseCase
+import com.williamsel.mathstack.features.settings.data.datasource.api.SettingsApi
+import com.williamsel.mathstack.features.settings.data.repositories.SettingsRepositoryImpl
+import com.williamsel.mathstack.features.settings.domain.repositories.SettingsRepository
+import com.williamsel.mathstack.features.settings.domain.usecases.GetSettingsUseCase
+import com.williamsel.mathstack.features.settings.domain.usecases.LogoutUseCase
+import com.williamsel.mathstack.features.settings.domain.usecases.SettingsUseCases
+import com.williamsel.mathstack.features.settings.domain.usecases.UpdateSettingsUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

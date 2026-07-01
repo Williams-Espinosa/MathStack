@@ -1,6 +1,6 @@
-package com.williamsel.mathstack.features.private.groups.domain.repositories
+package com.williamsel.mathstack.features.groups.domain.repositories
 
-import com.williamsel.mathstack.features.private.groups.domain.entities.Groups
+import com.williamsel.mathstack.features.groups.domain.entities.Groups
 
 interface GroupsRepository {
 

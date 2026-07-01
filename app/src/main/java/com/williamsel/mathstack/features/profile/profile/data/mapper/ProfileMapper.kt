@@ -1,9 +1,9 @@
-package com.williamsel.mathstack.features.private.profile.data.mapper
+package com.williamsel.mathstack.features.profile.profile.data.mapper
 
-import com.williamsel.mathstack.features.private.profile.data.models.AchievementDto
-import com.williamsel.mathstack.features.private.profile.data.models.ProfileDto
-import com.williamsel.mathstack.features.private.profile.domain.entities.Achievement
-import com.williamsel.mathstack.features.private.profile.domain.entities.Profile
+import com.williamsel.mathstack.features.profile.profile.data.models.AchievementDto
+import com.williamsel.mathstack.features.profile.profile.data.models.ProfileDto
+import com.williamsel.mathstack.features.profile.profile.domain.entities.Achievement
+import com.williamsel.mathstack.features.profile.profile.domain.entities.Profile
 
 fun ProfileDto.toDomain(): Profile = Profile(
     username              = username,

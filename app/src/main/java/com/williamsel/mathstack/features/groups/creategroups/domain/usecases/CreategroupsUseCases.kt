@@ -1,8 +1,8 @@
-package com.williamsel.mathstack.features.private.creategroups.domain.usecases
+package com.williamsel.mathstack.features.creategroups.domain.usecases
 
-import com.williamsel.mathstack.features.private.creategroups.domain.entities.CreateGroupParams
-import com.williamsel.mathstack.features.private.creategroups.domain.entities.CreatedGroup
-import com.williamsel.mathstack.features.private.creategroups.domain.repositories.CreategroupsRepository
+import com.williamsel.mathstack.features.creategroups.domain.entities.CreateGroupParams
+import com.williamsel.mathstack.features.creategroups.domain.entities.CreatedGroup
+import com.williamsel.mathstack.features.creategroups.domain.repositories.CreategroupsRepository
 import javax.inject.Inject
 
 class CreateGroupUseCase @Inject constructor(

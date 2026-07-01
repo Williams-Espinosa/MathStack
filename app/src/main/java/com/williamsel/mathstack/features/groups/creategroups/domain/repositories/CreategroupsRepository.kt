@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.creategroups.domain.repositories
+package com.williamsel.mathstack.features.creategroups.domain.repositories
 
-import com.williamsel.mathstack.features.private.creategroups.domain.entities.CreateGroupParams
-import com.williamsel.mathstack.features.private.creategroups.domain.entities.CreatedGroup
+import com.williamsel.mathstack.features.creategroups.domain.entities.CreateGroupParams
+import com.williamsel.mathstack.features.creategroups.domain.entities.CreatedGroup
 
 interface CreategroupsRepository {
 

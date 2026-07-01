@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.streak.domain.entities
+package com.williamsel.mathstack.features.profile.streak.domain.entities
 
 import java.time.LocalDate
 

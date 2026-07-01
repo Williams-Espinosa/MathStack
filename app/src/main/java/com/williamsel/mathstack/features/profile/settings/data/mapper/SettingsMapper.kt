@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.settings.data.mapper
+package com.williamsel.mathstack.features.settings.data.mapper
 
-import com.williamsel.mathstack.features.private.settings.data.models.SettingsDto
-import com.williamsel.mathstack.features.private.settings.domain.entities.Settings
+import com.williamsel.mathstack.features.settings.data.models.SettingsDto
+import com.williamsel.mathstack.features.settings.domain.entities.Settings
 
 fun SettingsDto.toDomain(): Settings = Settings(
     notificationsEnabled     = notificationsEnabled,

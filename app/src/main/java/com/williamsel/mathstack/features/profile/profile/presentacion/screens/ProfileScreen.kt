@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.profile.presentacion.screens
+package com.williamsel.mathstack.features.profile.profile.presentacion.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,14 +18,33 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.williamsel.mathstack.features.private.profile.domain.entities.Achievement
-import com.williamsel.mathstack.features.private.profile.presentacion.viewmodels.ProfileViewModel
-import com.williamsel.mathstack.ui.theme.*
+import com.williamsel.mathstack.features.profile.profile.domain.entities.Achievement
+import com.williamsel.mathstack.features.profile.profile.presentacion.viewmodels.ProfileViewModel
+import com.williamsel.mathstack.ui.theme.AmarilloChip
+import com.williamsel.mathstack.ui.theme.AmarilloTrofeo
+import com.williamsel.mathstack.ui.theme.AzulPrimario
+import com.williamsel.mathstack.ui.theme.FondoPantalla
+import com.williamsel.mathstack.ui.theme.IndicadorInactivo
+import com.williamsel.mathstack.ui.theme.RojoReto
+import com.williamsel.mathstack.ui.theme.TextoPrincipal
+import com.williamsel.mathstack.ui.theme.TextoSecundario
+
+private val HPad       = 20.dp
+private val EspacioN    = 18.dp
+private val EspacioC    = 10.dp
+private val NombreSp    = 24f
+private val EmailSp     = 13f
+private val SeccionSp   = 18f
+private val StatSp      = 20f
+private val LabelSp     = 12f
+private val CuerpoSp    = 14f
+private val AvatarSize  = 100.dp
+private val CornerH     = 36.dp
+private const val HeaderHeightFraction = 0.32f
 
 @Composable
 fun ProfileScreen(
@@ -48,27 +67,11 @@ private fun ProfileContent(
     onNavigateToSettings: () -> Unit,
     onNavigateToStreak: () -> Unit
 ) {
-    BoxWithConstraints(
+    Box(
         modifier = Modifier
             .fillMaxSize()
             .background(FondoPantalla)
     ) {
-        val anchoTotal = maxWidth
-        val altoTotal  = maxHeight
-
-        val hPad        = (anchoTotal * 0.05f).coerceIn(14.dp, 36.dp)
-        val espacioN    = (altoTotal  * 0.022f).coerceIn(10.dp, 24.dp)
-        val espacioC    = (altoTotal  * 0.012f).coerceIn(6.dp,  14.dp)
-        val nombreSp    = (anchoTotal.value * 0.062f).coerceIn(20f, 28f)
-        val emailSp     = (anchoTotal.value * 0.034f).coerceIn(12f, 15f)
-        val seccionSp   = (anchoTotal.value * 0.048f).coerceIn(16f, 20f)
-        val statSp      = (anchoTotal.value * 0.056f).coerceIn(18f, 24f)
-        val labelSp     = (anchoTotal.value * 0.032f).coerceIn(11f, 14f)
-        val cuerpoSp    = (anchoTotal.value * 0.036f).coerceIn(12f, 16f)
-        val avatarSize  = (anchoTotal * 0.24f).coerceIn(80.dp, 120.dp)
-        val cornerH     = (anchoTotal * 0.1f).coerceIn(28.dp, 48.dp)
-        val headerH     = if (altoTotal < 680.dp) 0.30f else 0.34f
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -77,7 +80,7 @@ private fun ProfileContent(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .fillMaxHeight(headerH)
+                    .fillMaxHeight(HeaderHeightFraction)
                     .background(
                         Brush.verticalGradient(
                             colors = listOf(
@@ -85,10 +88,10 @@ private fun ProfileContent(
                                 AzulPrimario.copy(alpha = 0.85f)
                             )
                         ),
-                        RoundedCornerShape(bottomStart = cornerH, bottomEnd = cornerH)
+                        RoundedCornerShape(bottomStart = CornerH, bottomEnd = CornerH)
                     )
-                    .padding(horizontal = hPad)
-                    .padding(top = espacioC, bottom = espacioN * 2)
+                    .padding(horizontal = HPad)
+                    .padding(top = EspacioC, bottom = EspacioN * 2)
             ) {
                 IconButton(
                     onClick  = onNavigateToSettings,
@@ -107,32 +110,32 @@ private fun ProfileContent(
                 ) {
                     Box(
                         modifier = Modifier
-                            .size(avatarSize)
+                            .size(AvatarSize)
                             .clip(CircleShape)
                             .background(Color.White.copy(alpha = 0.25f)),
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
                             text     = if (uiState.isLoading) "🧑‍🎓" else uiState.avatarEmoji,
-                            fontSize = (avatarSize.value * 0.45f).sp
+                            fontSize = (AvatarSize.value * 0.45f).sp
                         )
                     }
 
-                    Spacer(Modifier.height(espacioC))
+                    Spacer(Modifier.height(EspacioC))
 
                     Text(
                         uiState.username.ifEmpty { "—" },
-                        fontSize   = nombreSp.sp,
+                        fontSize   = NombreSp.sp,
                         fontWeight = FontWeight.Bold,
                         color      = Color.White
                     )
                     Text(
                         uiState.email.ifEmpty { "—" },
-                        fontSize = emailSp.sp,
+                        fontSize = EmailSp.sp,
                         color    = Color.White.copy(alpha = 0.85f)
                     )
 
-                    Spacer(Modifier.height(espacioC))
+                    Spacer(Modifier.height(EspacioC))
 
                     Surface(
                         shape = RoundedCornerShape(20.dp),
@@ -142,11 +145,11 @@ private fun ProfileContent(
                             modifier = Modifier.padding(horizontal = 14.dp, vertical = 6.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Text("🏆", fontSize = (emailSp + 2f).sp)
+                            Text("🏆", fontSize = (EmailSp + 2f).sp)
                             Spacer(Modifier.width(6.dp))
                             Text(
                                 "Nivel ${uiState.level}",
-                                fontSize   = (emailSp + 1f).sp,
+                                fontSize   = (EmailSp + 1f).sp,
                                 fontWeight = FontWeight.SemiBold,
                                 color      = Color.White
                             )
@@ -155,12 +158,12 @@ private fun ProfileContent(
                 }
             }
 
-            Spacer(Modifier.height(espacioN))
+            Spacer(Modifier.height(EspacioN))
 
             Card(
                 modifier  = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = hPad),
+                    .padding(horizontal = HPad),
                 shape     = RoundedCornerShape(20.dp),
                 colors    = CardDefaults.cardColors(containerColor = Color.White),
                 elevation = CardDefaults.cardElevation(2.dp)
@@ -176,16 +179,16 @@ private fun ProfileContent(
                             modifier              = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceEvenly
                         ) {
-                            StatItem(emoji = "⚡", value = "${uiState.totalXp}", label = "XP Total", statSp = statSp, labelSp = labelSp, color = AmarilloTrofeo)
+                            StatItem(emoji = "⚡", value = "${uiState.totalXp}", label = "XP Total", statSp = StatSp, labelSp = LabelSp, color = AmarilloTrofeo)
                             VerticalDivider(modifier = Modifier.height(56.dp))
-                            StatItem(emoji = "🪙", value = "${uiState.coins}", label = "Monedas", statSp = statSp, labelSp = labelSp, color = AmarilloChip)
+                            StatItem(emoji = "🪙", value = "${uiState.coins}", label = "Monedas", statSp = StatSp, labelSp = LabelSp, color = AmarilloChip)
                             VerticalDivider(modifier = Modifier.height(56.dp))
-                            StatItem(emoji = "🔥", value = "${uiState.streak}", label = "Racha", statSp = statSp, labelSp = labelSp, color = RojoReto)
+                            StatItem(emoji = "🔥", value = "${uiState.streak}", label = "Racha", statSp = StatSp, labelSp = LabelSp, color = RojoReto)
                         }
 
-                        Spacer(Modifier.height(espacioN))
+                        Spacer(Modifier.height(EspacioN))
                         HorizontalDivider(color = IndicadorInactivo.copy(alpha = 0.4f))
-                        Spacer(Modifier.height(espacioN))
+                        Spacer(Modifier.height(EspacioN))
 
                         Row(
                             modifier = Modifier.fillMaxWidth(),
@@ -193,13 +196,13 @@ private fun ProfileContent(
                         ) {
                             Text(
                                 "Progreso al nivel ${uiState.nextLevel}",
-                                fontSize = cuerpoSp.sp,
+                                fontSize = CuerpoSp.sp,
                                 color    = TextoPrincipal,
                                 fontWeight = FontWeight.Medium
                             )
                             Text(
                                 "${(uiState.levelProgress * 100).toInt()}%",
-                                fontSize   = cuerpoSp.sp,
+                                fontSize   = CuerpoSp.sp,
                                 fontWeight = FontWeight.Bold,
                                 color      = AzulPrimario
                             )
@@ -208,35 +211,35 @@ private fun ProfileContent(
                         Spacer(Modifier.height(8.dp))
 
                         LinearProgressIndicator(
-                            progress        = { uiState.levelProgress },
-                            modifier        = Modifier.fillMaxWidth().height(8.dp).clip(RoundedCornerShape(4.dp)),
-                            color           = AzulPrimario,
-                            trackColor      = IndicadorInactivo.copy(alpha = 0.4f)
+                            progress   = { uiState.levelProgress },
+                            modifier   = Modifier.fillMaxWidth().height(8.dp).clip(RoundedCornerShape(4.dp)),
+                            color      = AzulPrimario,
+                            trackColor = IndicadorInactivo.copy(alpha = 0.4f)
                         )
 
                         Spacer(Modifier.height(6.dp))
 
                         Text(
                             "${uiState.xpRemaining} XP restantes",
-                            fontSize = labelSp.sp,
+                            fontSize = LabelSp.sp,
                             color    = TextoSecundario
                         )
                     }
                 }
             }
 
-            Spacer(Modifier.height(espacioN))
+            Spacer(Modifier.height(EspacioN))
 
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = hPad),
+                    .padding(horizontal = HPad),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     "Estadísticas",
-                    fontSize   = seccionSp.sp,
+                    fontSize   = SeccionSp.sp,
                     fontWeight = FontWeight.Bold,
                     color      = TextoPrincipal
                 )
@@ -244,56 +247,56 @@ private fun ProfileContent(
                     Text(
                         "Ver racha",
                         color    = AzulPrimario,
-                        fontSize = cuerpoSp.sp,
+                        fontSize = CuerpoSp.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                 }
             }
 
-            Spacer(Modifier.height(espacioC))
+            Spacer(Modifier.height(EspacioC))
 
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = hPad),
-                horizontalArrangement = Arrangement.spacedBy(espacioC)
+                    .padding(horizontal = HPad),
+                horizontalArrangement = Arrangement.spacedBy(EspacioC)
             ) {
                 StatCard(
                     emoji    = "📖",
                     value    = "${uiState.lessonsCompleted}",
                     label    = "Lecciones\ncompletadas",
-                    cuerpoSp = cuerpoSp,
-                    statSp   = statSp,
+                    cuerpoSp = CuerpoSp,
+                    statSp   = StatSp,
                     modifier = Modifier.weight(1f)
                 )
                 StatCard(
                     emoji    = "🏅",
                     value    = "${uiState.achievementsUnlocked}",
                     label    = "Logros\ndesbloqueados",
-                    cuerpoSp = cuerpoSp,
-                    statSp   = statSp,
+                    cuerpoSp = CuerpoSp,
+                    statSp   = StatSp,
                     modifier = Modifier.weight(1f)
                 )
             }
 
-            Spacer(Modifier.height(espacioN))
+            Spacer(Modifier.height(EspacioN))
 
             Text(
                 "Logros",
-                modifier   = Modifier.padding(horizontal = hPad),
-                fontSize   = seccionSp.sp,
+                modifier   = Modifier.padding(horizontal = HPad),
+                fontSize   = SeccionSp.sp,
                 fontWeight = FontWeight.Bold,
                 color      = TextoPrincipal
             )
 
-            Spacer(Modifier.height(espacioC))
+            Spacer(Modifier.height(EspacioC))
 
             if (uiState.achievements.isEmpty() && !uiState.isLoading) {
                 Text(
                     "No hay logros disponibles",
-                    modifier  = Modifier.padding(horizontal = hPad),
+                    modifier  = Modifier.padding(horizontal = HPad),
                     color     = TextoSecundario,
-                    fontSize  = cuerpoSp.sp
+                    fontSize  = CuerpoSp.sp
                 )
             } else {
                 val chunks = uiState.achievements.chunked(3)
@@ -301,13 +304,13 @@ private fun ProfileContent(
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(horizontal = hPad),
-                        horizontalArrangement = Arrangement.spacedBy(espacioC)
+                            .padding(horizontal = HPad),
+                        horizontalArrangement = Arrangement.spacedBy(EspacioC)
                     ) {
                         row.forEach { achievement ->
                             AchievementCard(
                                 achievement = achievement,
-                                labelSp     = labelSp,
+                                labelSp     = LabelSp,
                                 modifier    = Modifier.weight(1f)
                             )
                         }
@@ -315,15 +318,14 @@ private fun ProfileContent(
                             Spacer(Modifier.weight(1f))
                         }
                     }
-                    Spacer(Modifier.height(espacioC))
+                    Spacer(Modifier.height(EspacioC))
                 }
             }
 
-            Spacer(Modifier.height(espacioN))
+            Spacer(Modifier.height(EspacioN))
         }
     }
 }
-
 
 @Composable
 private fun StatItem(
@@ -424,10 +426,10 @@ private fun AchievementCard(
             )
             Spacer(Modifier.height(4.dp))
             Text(
-                text      = achievement.title,
-                fontSize  = (labelSp - 1f).sp,
-                color     = if (achievement.isUnlocked) TextoPrincipal else TextoSecundario,
-                textAlign = TextAlign.Center,
+                text       = achievement.title,
+                fontSize   = (labelSp - 1f).sp,
+                color      = if (achievement.isUnlocked) TextoPrincipal else TextoSecundario,
+                textAlign  = TextAlign.Center,
                 lineHeight = (labelSp * 1.3f).sp,
                 fontWeight = if (achievement.isUnlocked) FontWeight.Medium else FontWeight.Normal
             )

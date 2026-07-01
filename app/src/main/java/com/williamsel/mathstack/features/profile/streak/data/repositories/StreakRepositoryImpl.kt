@@ -1,9 +1,9 @@
-package com.williamsel.mathstack.features.private.streak.data.repositories
+package com.williamsel.mathstack.features.profile.streak.data.repositories
 
-import com.williamsel.mathstack.features.private.streak.data.datasource.api.StreakApi
-import com.williamsel.mathstack.features.private.streak.data.mapper.toDomain
-import com.williamsel.mathstack.features.private.streak.domain.entities.Streak
-import com.williamsel.mathstack.features.private.streak.domain.repositories.StreakRepository
+import com.williamsel.mathstack.features.profile.streak.data.datasource.api.StreakApi
+import com.williamsel.mathstack.features.profile.streak.data.mapper.toDomain
+import com.williamsel.mathstack.features.profile.streak.domain.entities.Streak
+import com.williamsel.mathstack.features.profile.streak.domain.repositories.StreakRepository
 import javax.inject.Inject
 
 class StreakRepositoryImpl @Inject constructor(

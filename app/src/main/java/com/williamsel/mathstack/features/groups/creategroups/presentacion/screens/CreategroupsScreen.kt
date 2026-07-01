@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.creategroups.presentacion.screens
+package com.williamsel.mathstack.features.creategroups.presentacion.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -17,17 +17,26 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.williamsel.mathstack.features.private.creategroups.presentacion.viewmodels.CreategroupsViewModel
-import com.williamsel.mathstack.ui.theme.*
+import com.williamsel.mathstack.features.creategroups.presentacion.viewmodels.CreategroupsViewModel
+import com.williamsel.mathstack.ui.theme.AzulPrimario
+import com.williamsel.mathstack.ui.theme.FondoPantalla
+import com.williamsel.mathstack.ui.theme.TextoPrincipal
+import com.williamsel.mathstack.ui.theme.TextoSecundario
 
 private val SUBJECTS = listOf(
     "Álgebra", "Cálculo", "Geometría"
 )
+private val HPad      = 20.dp
+private val EspacioN   = 16.dp
+private val EspacioC   = 12.dp
+private val TituloSp   = 21f
+private val LabelSp    = 14f
+private val BodySp     = 15f
+private val BotonAlto  = 50.dp
 
 @Composable
 fun CreategroupsScreen(
@@ -78,228 +87,211 @@ private fun CreategroupsContent(
         }
     }
 
-    BoxWithConstraints(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(FondoPantalla)
-    ) {
-        val anchoTotal = maxWidth
-        val altoTotal  = maxHeight
-        val hPad       = (anchoTotal * 0.05f).coerceIn(14.dp, 32.dp)
-        val espacioN   = (altoTotal  * 0.022f).coerceIn(10.dp, 22.dp)
-        val espacioC   = (altoTotal  * 0.016f).coerceIn(8.dp,  16.dp)
-        val tituloSp   = (anchoTotal.value * 0.058f).coerceIn(18f, 24f)
-        val labelSp    = (anchoTotal.value * 0.036f).coerceIn(12f, 15f)
-        val bodySp     = (anchoTotal.value * 0.040f).coerceIn(14f, 16f)
-        val botonAlto  = (altoTotal  * 0.062f).coerceIn(44.dp, 56.dp)
+    Scaffold(
+        containerColor = FondoPantalla,
+        snackbarHost   = { SnackbarHost(snackbarHostState) }
+    ) { paddingValues ->
 
-        Scaffold(
-            containerColor = FondoPantalla,
-            snackbarHost   = { SnackbarHost(snackbarHostState) }
-        ) { paddingValues ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(FondoPantalla)
+                .padding(paddingValues)
+                .padding(horizontal = HPad)
+                .verticalScroll(rememberScrollState()),
+            verticalArrangement = Arrangement.spacedBy(EspacioC)
+        ) {
 
-            Column(
+            Row(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues)
-                    .padding(horizontal = hPad)
-                    .verticalScroll(rememberScrollState()),
-                verticalArrangement = Arrangement.spacedBy(espacioC)
+                    .fillMaxWidth()
+                    .padding(top = EspacioN),
+                verticalAlignment = Alignment.CenterVertically
             ) {
+                IconButton(onClick = onNavigateBack) {
+                    Icon(
+                        Icons.Outlined.ArrowBack,
+                        contentDescription = "Volver",
+                        tint = TextoPrincipal
+                    )
+                }
+                Spacer(Modifier.width(4.dp))
+                Text(
+                    "Crear Grupo",
+                    fontSize   = TituloSp.sp,
+                    fontWeight = FontWeight.Bold,
+                    color      = TextoPrincipal
+                )
+            }
 
+            Surface(
+                shape = RoundedCornerShape(16.dp),
+                color = AzulPrimario,
+                modifier = Modifier.fillMaxWidth()
+            ) {
                 Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = espacioN),
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    IconButton(onClick = onNavigateBack) {
+                    Box(
+                        modifier = Modifier
+                            .size(44.dp)
+                            .clip(RoundedCornerShape(12.dp))
+                            .background(Color.White.copy(alpha = 0.2f)),
+                        contentAlignment = Alignment.Center
+                    ) {
                         Icon(
-                            Icons.Outlined.ArrowBack,
-                            contentDescription = "Volver",
-                            tint = TextoPrincipal
+                            Icons.Outlined.Group,
+                            contentDescription = null,
+                            tint     = Color.White,
+                            modifier = Modifier.size(26.dp)
                         )
                     }
-                    Spacer(Modifier.width(4.dp))
-                    Text(
-                        "Crear Grupo",
-                        fontSize   = tituloSp.sp,
-                        fontWeight = FontWeight.Bold,
-                        color      = TextoPrincipal
-                    )
-                }
-
-                Surface(
-                    shape = RoundedCornerShape(16.dp),
-                    color = AzulPrimario,
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Row(
-                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .size(44.dp)
-                                .clip(RoundedCornerShape(12.dp))
-                                .background(Color.White.copy(alpha = 0.2f)),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Icon(
-                                Icons.Outlined.Group,
-                                contentDescription = null,
-                                tint     = Color.White,
-                                modifier = Modifier.size(26.dp)
-                            )
-                        }
-                        Spacer(Modifier.width(14.dp))
-                        Column {
-                            Text(
-                                "Nuevo Grupo",
-                                fontSize   = bodySp.sp,
-                                fontWeight = FontWeight.Bold,
-                                color      = Color.White
-                            )
-                            Text(
-                                "Crea tu comunidad de estudio",
-                                fontSize = (labelSp - 1f).sp,
-                                color    = Color.White.copy(alpha = 0.85f)
-                            )
-                        }
-                    }
-                }
-
-                FormLabel(text = "Nombre del grupo", labelSp = labelSp)
-                OutlinedTextField(
-                    value         = uiState.name,
-                    onValueChange = onNameChange,
-                    placeholder   = { Text("Ej. Matemáticas Avanzadas 2024", color = TextoSecundario) },
-                    singleLine    = true,
-                    shape         = RoundedCornerShape(12.dp),
-                    modifier      = Modifier.fillMaxWidth(),
-                    colors        = groupTextFieldColors()
-                )
-
-                FormLabel(text = "Descripción", labelSp = labelSp)
-                OutlinedTextField(
-                    value         = uiState.description,
-                    onValueChange = onDescriptionChange,
-                    placeholder   = { Text("Describe el objetivo del grupo…", color = TextoSecundario) },
-                    minLines      = 3,
-                    maxLines      = 5,
-                    shape         = RoundedCornerShape(12.dp),
-                    modifier      = Modifier.fillMaxWidth(),
-                    colors        = groupTextFieldColors()
-                )
-
-
-                FormLabel(text = "Materia principal", labelSp = labelSp)
-                ExposedDropdownMenuBox(
-                    expanded        = subjectExpanded,
-                    onExpandedChange = { subjectExpanded = it }
-                ) {
-                    OutlinedTextField(
-                        value         = uiState.subject,
-                        onValueChange = {},
-                        readOnly      = true,
-                        trailingIcon  = { ExposedDropdownMenuDefaults.TrailingIcon(subjectExpanded) },
-                        shape         = RoundedCornerShape(12.dp),
-                        modifier      = Modifier
-                            .fillMaxWidth()
-                            .menuAnchor(),
-                        colors        = groupTextFieldColors()
-                    )
-                    ExposedDropdownMenu(
-                        expanded        = subjectExpanded,
-                        onDismissRequest = { subjectExpanded = false }
-                    ) {
-                        SUBJECTS.forEach { subject ->
-                            DropdownMenuItem(
-                                text    = { Text(subject) },
-                                onClick = {
-                                    onSubjectChange(subject)
-                                    subjectExpanded = false
-                                }
-                            )
-                        }
-                    }
-                }
-
-                FormLabel(text = "Máximo de miembros", labelSp = labelSp)
-                OutlinedTextField(
-                    value         = uiState.maxMembers.toString(),
-                    onValueChange = { raw ->
-                        raw.toIntOrNull()?.let { onMaxMembersChange(it) }
-                    },
-                    singleLine    = true,
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                    shape         = RoundedCornerShape(12.dp),
-                    modifier      = Modifier.fillMaxWidth(),
-                    colors        = groupTextFieldColors()
-                )
-                Text(
-                    "Entre 5 y 100 miembros",
-                    fontSize = (labelSp - 1f).sp,
-                    color    = TextoSecundario
-                )
-
-                Surface(
-                    shape = RoundedCornerShape(12.dp),
-                    color = AzulPrimario.copy(alpha = 0.08f),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Row(
-                        modifier = Modifier.padding(12.dp),
-                        verticalAlignment = Alignment.Top
-                    ) {
-                        Text("🏆", fontSize = 18.sp)
-                        Spacer(Modifier.width(10.dp))
-                        Column {
-                            Text(
-                                "Recompensas del grupo",
-                                fontSize   = labelSp.sp,
-                                fontWeight = FontWeight.SemiBold,
-                                color      = TextoPrincipal
-                            )
-                            Text(
-                                "Los miembros ganarán monedas y XP adicional al completar retos grupales",
-                                fontSize = (labelSp - 1f).sp,
-                                color    = TextoSecundario
-                            )
-                        }
-                    }
-                }
-
-                Button(
-                    onClick  = onCreateGroup,
-                    enabled  = !uiState.isLoading,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(botonAlto)
-                        .padding(bottom = espacioN),
-                    shape  = RoundedCornerShape(14.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = AzulPrimario)
-                ) {
-                    if (uiState.isLoading) {
-                        CircularProgressIndicator(
-                            color       = Color.White,
-                            modifier    = Modifier.size(22.dp),
-                            strokeWidth = 2.dp
-                        )
-                    } else {
+                    Spacer(Modifier.width(14.dp))
+                    Column {
                         Text(
-                            "Crear grupo",
-                            fontSize   = bodySp.sp,
+                            "Nuevo Grupo",
+                            fontSize   = BodySp.sp,
                             fontWeight = FontWeight.Bold,
                             color      = Color.White
                         )
+                        Text(
+                            "Crea tu comunidad de estudio",
+                            fontSize = (LabelSp - 1f).sp,
+                            color    = Color.White.copy(alpha = 0.85f)
+                        )
                     }
+                }
+            }
+
+            FormLabel(text = "Nombre del grupo", labelSp = LabelSp)
+            OutlinedTextField(
+                value         = uiState.name,
+                onValueChange = onNameChange,
+                placeholder   = { Text("Ej. Matemáticas Avanzadas 2024", color = TextoSecundario) },
+                singleLine    = true,
+                shape         = RoundedCornerShape(12.dp),
+                modifier      = Modifier.fillMaxWidth(),
+                colors        = groupTextFieldColors()
+            )
+
+            FormLabel(text = "Descripción", labelSp = LabelSp)
+            OutlinedTextField(
+                value         = uiState.description,
+                onValueChange = onDescriptionChange,
+                placeholder   = { Text("Describe el objetivo del grupo…", color = TextoSecundario) },
+                minLines      = 3,
+                maxLines      = 5,
+                shape         = RoundedCornerShape(12.dp),
+                modifier      = Modifier.fillMaxWidth(),
+                colors        = groupTextFieldColors()
+            )
+
+            FormLabel(text = "Materia principal", labelSp = LabelSp)
+            ExposedDropdownMenuBox(
+                expanded        = subjectExpanded,
+                onExpandedChange = { subjectExpanded = it }
+            ) {
+                OutlinedTextField(
+                    value         = uiState.subject,
+                    onValueChange = {},
+                    readOnly      = true,
+                    trailingIcon  = { ExposedDropdownMenuDefaults.TrailingIcon(subjectExpanded) },
+                    shape         = RoundedCornerShape(12.dp),
+                    modifier      = Modifier
+                        .fillMaxWidth()
+                        .menuAnchor(),
+                    colors        = groupTextFieldColors()
+                )
+                ExposedDropdownMenu(
+                    expanded        = subjectExpanded,
+                    onDismissRequest = { subjectExpanded = false }
+                ) {
+                    SUBJECTS.forEach { subject ->
+                        DropdownMenuItem(
+                            text    = { Text(subject) },
+                            onClick = {
+                                onSubjectChange(subject)
+                                subjectExpanded = false
+                            }
+                        )
+                    }
+                }
+            }
+
+            FormLabel(text = "Máximo de miembros", labelSp = LabelSp)
+            OutlinedTextField(
+                value         = uiState.maxMembers.toString(),
+                onValueChange = { raw ->
+                    raw.toIntOrNull()?.let { onMaxMembersChange(it) }
+                },
+                singleLine    = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                shape         = RoundedCornerShape(12.dp),
+                modifier      = Modifier.fillMaxWidth(),
+                colors        = groupTextFieldColors()
+            )
+            Text(
+                "Entre 5 y 100 miembros",
+                fontSize = (LabelSp - 1f).sp,
+                color    = TextoSecundario
+            )
+
+            Surface(
+                shape = RoundedCornerShape(12.dp),
+                color = AzulPrimario.copy(alpha = 0.08f),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Row(
+                    modifier = Modifier.padding(12.dp),
+                    verticalAlignment = Alignment.Top
+                ) {
+                    Text("🏆", fontSize = 18.sp)
+                    Spacer(Modifier.width(10.dp))
+                    Column {
+                        Text(
+                            "Recompensas del grupo",
+                            fontSize   = LabelSp.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color      = TextoPrincipal
+                        )
+                        Text(
+                            "Los miembros ganarán monedas y XP adicional al completar retos grupales",
+                            fontSize = (LabelSp - 1f).sp,
+                            color    = TextoSecundario
+                        )
+                    }
+                }
+            }
+
+            Button(
+                onClick  = onCreateGroup,
+                enabled  = !uiState.isLoading,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(BotonAlto)
+                    .padding(bottom = EspacioN),
+                shape  = RoundedCornerShape(14.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = AzulPrimario)
+            ) {
+                if (uiState.isLoading) {
+                    CircularProgressIndicator(
+                        color       = Color.White,
+                        modifier    = Modifier.size(22.dp),
+                        strokeWidth = 2.dp
+                    )
+                } else {
+                    Text(
+                        "Crear grupo",
+                        fontSize   = BodySp.sp,
+                        fontWeight = FontWeight.Bold,
+                        color      = Color.White
+                    )
                 }
             }
         }
     }
 }
-
 
 @Composable
 private fun FormLabel(text: String, labelSp: Float) {
@@ -321,4 +313,3 @@ private fun groupTextFieldColors() = OutlinedTextFieldDefaults.colors(
     unfocusedTextColor   = TextoPrincipal,
     cursorColor          = AzulPrimario
 )
-

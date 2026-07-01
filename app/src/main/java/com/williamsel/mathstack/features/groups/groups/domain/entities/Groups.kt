@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.groups.domain.entities
+package com.williamsel.mathstack.features.groups.domain.entities
 
 data class Groups(
     val myGroupsCount: Int,

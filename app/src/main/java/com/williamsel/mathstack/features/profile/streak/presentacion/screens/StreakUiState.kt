@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.streak.presentacion.screens
+package com.williamsel.mathstack.features.profile.streak.presentacion.screens
 
-import com.williamsel.mathstack.features.private.streak.domain.entities.ActivityDay
-import com.williamsel.mathstack.features.private.streak.domain.entities.StreakDay
+import com.williamsel.mathstack.features.profile.streak.domain.entities.ActivityDay
+import com.williamsel.mathstack.features.profile.streak.domain.entities.StreakDay
 
 data class StreakUiState(
     val currentStreak: Int = 0,

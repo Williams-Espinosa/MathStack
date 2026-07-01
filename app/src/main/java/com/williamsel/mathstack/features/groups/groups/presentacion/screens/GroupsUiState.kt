@@ -1,6 +1,6 @@
-package com.williamsel.mathstack.features.private.groups.presentacion.screens
+package com.williamsel.mathstack.features.groups.presentacion.screens
 
-import com.williamsel.mathstack.features.private.groups.domain.entities.Group
+import com.williamsel.mathstack.features.groups.domain.entities.Group
 
 data class GroupsUiState(
     val myGroupsCount: Int       = 0,

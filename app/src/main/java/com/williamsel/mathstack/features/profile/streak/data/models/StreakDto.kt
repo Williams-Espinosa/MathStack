@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.streak.data.models
+package com.williamsel.mathstack.features.profile.streak.data.models
 
 import com.google.gson.annotations.SerializedName
 

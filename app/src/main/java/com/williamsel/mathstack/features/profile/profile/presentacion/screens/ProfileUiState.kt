@@ -1,6 +1,6 @@
-package com.williamsel.mathstack.features.private.profile.presentacion.screens
+package com.williamsel.mathstack.features.profile.profile.presentacion.screens
 
-import com.williamsel.mathstack.features.private.profile.domain.entities.Achievement
+import com.williamsel.mathstack.features.profile.profile.domain.entities.Achievement
 
 data class ProfileUiState(
     val username: String         = "",

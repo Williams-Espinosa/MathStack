@@ -95,6 +95,8 @@ coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-co
 # Lottie
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
 
+androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+
 [plugins]
 
 android-application = { id = "com.android.application", version.ref = "agp" }

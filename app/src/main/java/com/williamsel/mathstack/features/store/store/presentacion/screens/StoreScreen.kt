@@ -1,6 +1,5 @@
 package com.williamsel.mathstack.features.store.presentacion.screens
 
-import android.R.attr.maxWidth
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -19,7 +18,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
@@ -77,7 +75,7 @@ private fun StoreContent(
             .fillMaxSize()
             .background(FondoPantalla)
     ) {
-        val anchoTotal = maxWidth
+        val anchoTotal = this.maxWidth
 
         val hPad        = (anchoTotal * 0.05f).coerceIn(12.dp, 32.dp)
         val espacioN    = (anchoTotal.value * 0.045f).coerceIn(12f, 24f).dp
@@ -176,8 +174,7 @@ private fun StoreContent(
             }
         }
     }
-
-
+}
 
 @Composable
 private fun CoinBadge(amount: Int, fontSize: Float) {
@@ -200,7 +197,6 @@ private fun CoinBadge(amount: Int, fontSize: Float) {
         }
     }
 }
-
 
 @Composable
 private fun AvatarCard(
@@ -276,11 +272,11 @@ private fun AvatarCard(
                         shape    = RoundedCornerShape(20.dp),
                         colors   = ButtonDefaults.buttonColors(
                             containerColor         = VerdePrimario,
-                            disabledContainerColor = VerdePrimario
+                            disabledContainerColor = if (avatar.isEquipped) VerdePrimario.copy(alpha = 0.5f) else VerdePrimario
                         )
                     ) {
                         Text(
-                            "En inventario",
+                            if (avatar.isEquipped) "Equipado" else "Equipar",
                             fontSize   = precioSp.sp,
                             fontWeight = FontWeight.SemiBold,
                             color      = Color.White
@@ -289,7 +285,6 @@ private fun AvatarCard(
                 }
 
                 else -> {
-                    // Botón azul con ícono moneda naranja + precio blanco
                     Button(
                         onClick  = onPurchaseClick,
                         modifier = Modifier.fillMaxWidth().height(40.dp),
@@ -310,6 +305,7 @@ private fun AvatarCard(
         }
     }
 }
+
 @Composable
 private fun PurchaseConfirmDialog(
     avatar: Avatar,
@@ -443,14 +439,4 @@ private fun PurchaseConfirmDialog(
             }
         }
     }
-}
-
-@Composable
-fun PurchaseConfirmDialog(
-    avatar: Avatar,
-    coinBalance: Int,
-    onConfirm: () -> Unit,
-    onDismiss: () -> Unit
-) {
-    TODO("Not yet implemented")
 }

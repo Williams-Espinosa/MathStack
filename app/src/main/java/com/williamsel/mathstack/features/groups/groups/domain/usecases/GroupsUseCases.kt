@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.groups.domain.usecases
+package com.williamsel.mathstack.features.groups.domain.usecases
 
-import com.williamsel.mathstack.features.private.groups.domain.entities.Groups
-import com.williamsel.mathstack.features.private.groups.domain.repositories.GroupsRepository
+import com.williamsel.mathstack.features.groups.domain.entities.Groups
+import com.williamsel.mathstack.features.groups.domain.repositories.GroupsRepository
 import javax.inject.Inject
 
 class GetGroupsUseCase @Inject constructor(

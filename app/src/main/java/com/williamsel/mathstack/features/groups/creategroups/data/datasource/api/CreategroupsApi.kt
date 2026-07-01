@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.creategroups.data.datasource.api
+package com.williamsel.mathstack.features.creategroups.data.datasource.api
 
-import com.williamsel.mathstack.features.private.creategroups.data.models.CreateGroupRequestDto
-import com.williamsel.mathstack.features.private.creategroups.data.models.CreatedGroupDto
+import com.williamsel.mathstack.features.creategroups.data.models.CreateGroupRequestDto
+import com.williamsel.mathstack.features.creategroups.data.models.CreatedGroupDto
 import retrofit2.http.Body
 import retrofit2.http.POST
 

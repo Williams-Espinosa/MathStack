@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.public.termsandconditions.presentacion.screens
+package com.williamsel.mathstack.features.auth.termsandconditions.presentacion.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -17,11 +17,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.williamsel.mathstack.features.public.termsandconditions.presentacion.viewmodels.TermsandconditionsViewModel
+import com.williamsel.mathstack.features.auth.termsandconditions.presentacion.viewmodels.TermsandconditionsViewModel
 import com.williamsel.mathstack.ui.theme.*
 
 @Composable
@@ -46,8 +45,8 @@ private fun TermsandconditionsContent(
             .fillMaxSize()
             .background(FondoPantalla)
     ) {
-        val anchoTotal = maxWidth
-        val altoTotal  = maxHeight
+        val anchoTotal = this.maxWidth
+        val altoTotal  = this.maxHeight
 
         val hPad        = (anchoTotal * 0.06f).coerceIn(16.dp, 40.dp)
         val espacioN    = (altoTotal  * 0.022f).coerceIn(10.dp, 24.dp)
@@ -64,7 +63,6 @@ private fun TermsandconditionsContent(
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
         ) {
-
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -164,7 +162,7 @@ private fun TermsandconditionsContent(
 
                 val secciones = listOf(
                     "1. Aceptación de los términos" to
-                            "Al usar MathStack, aceptas estos términos y condiciones. Si no estás de acuerdo, no uses la aplicación.",
+                            "Al usar MathStack, aceptas estos términos y condiciones. Si no estás de acuerdo, no utilices la aplicación.",
                     "2. Responsabilidades del usuario" to
                             "Eres responsable de mantener la confidencialidad de tu cuenta y contraseña. Debes notificarnos inmediatamente cualquier uso no autorizado.",
                     "3. Actividades prohibidas" to

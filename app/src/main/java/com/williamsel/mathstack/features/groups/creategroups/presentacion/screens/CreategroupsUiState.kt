@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.creategroups.presentacion.screens
+package com.williamsel.mathstack.features.creategroups.presentacion.screens
 
 data class CreategroupsUiState(
     val name: String           = "",

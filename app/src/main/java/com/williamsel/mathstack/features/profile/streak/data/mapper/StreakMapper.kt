@@ -1,11 +1,11 @@
-package com.williamsel.mathstack.features.private.streak.data.mapper
+package com.williamsel.mathstack.features.profile.streak.data.mapper
 
-import com.williamsel.mathstack.features.private.streak.data.models.ActivityDayDto
-import com.williamsel.mathstack.features.private.streak.data.models.StreakDayDto
-import com.williamsel.mathstack.features.private.streak.data.models.StreakDto
-import com.williamsel.mathstack.features.private.streak.domain.entities.ActivityDay
-import com.williamsel.mathstack.features.private.streak.domain.entities.Streak
-import com.williamsel.mathstack.features.private.streak.domain.entities.StreakDay
+import com.williamsel.mathstack.features.profile.streak.data.models.ActivityDayDto
+import com.williamsel.mathstack.features.profile.streak.data.models.StreakDayDto
+import com.williamsel.mathstack.features.profile.streak.data.models.StreakDto
+import com.williamsel.mathstack.features.profile.streak.domain.entities.ActivityDay
+import com.williamsel.mathstack.features.profile.streak.domain.entities.Streak
+import com.williamsel.mathstack.features.profile.streak.domain.entities.StreakDay
 import java.time.LocalDate
 
 fun StreakDto.toDomain(): Streak = Streak(

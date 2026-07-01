@@ -5,10 +5,11 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.williamsel.mathstack.features.private.creategroups.presentacion.screens.CreategroupsScreen
-import com.williamsel.mathstack.features.private.groups.presentacion.screens.GroupsScreen
-import com.williamsel.mathstack.features.public.login.presentation.screen.LoginScreen
-import com.williamsel.mathstack.features.public.register.presentacion.screens.RegisterScreen
+import com.williamsel.mathstack.features.creategroups.presentacion.screens.CreategroupsScreen
+import com.williamsel.mathstack.features.groups.presentacion.screens.GroupsScreen
+import com.williamsel.mathstack.features.auth.login.presentation.screen.LoginScreen
+import com.williamsel.mathstack.features.auth.register.presentacion.screens.RegisterScreen
+import com.williamsel.mathstack.features.auth.termsandconditions.presentacion.screens.TermsandconditionsScreen
 
 @Composable
 fun NavGraph(navController: NavHostController) {
@@ -25,6 +26,9 @@ fun NavGraph(navController: NavHostController) {
                 },
                 onNavigateToRegister = {
                     navController.navigate(Route.Register)
+                },
+                onNavigateToTerms = {
+                    navController.navigate(Route.TermsAndConditions)
                 }
             )
         }
@@ -37,6 +41,9 @@ fun NavGraph(navController: NavHostController) {
                 },
                 onNavigateToLogin = {
                     navController.popBackStack()
+                },
+                onNavigateToTerms = {
+                    navController.navigate(Route.TermsAndConditions)
                 }
             )
         }
@@ -61,6 +68,12 @@ fun NavGraph(navController: NavHostController) {
                 onNavigateBack = {
                     navController.popBackStack()
                 }
+            )
+        }
+
+        composable<Route.TermsAndConditions> {
+            TermsandconditionsScreen(
+                onBack = { navController.popBackStack() }
             )
         }
 

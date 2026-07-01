@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.profile.data.models
+package com.williamsel.mathstack.features.profile.profile.data.models
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.groupranking.domain.entities
+package com.williamsel.mathstack.features.groupranking.domain.entities
 
 
 data class GroupRanking(

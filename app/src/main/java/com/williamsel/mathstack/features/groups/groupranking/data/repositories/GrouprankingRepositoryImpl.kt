@@ -1,10 +1,10 @@
-package com.williamsel.mathstack.features.private.groupranking.data.repositories
+package com.williamsel.mathstack.features.groupranking.data.repositories
 
-import com.williamsel.mathstack.features.private.groupranking.data.datasource.api.GrouprankingApi
-import com.williamsel.mathstack.features.private.groupranking.data.mapper.toDomain
-import com.williamsel.mathstack.features.private.groupranking.domain.entities.GlobalRanking
-import com.williamsel.mathstack.features.private.groupranking.domain.entities.GroupRanking
-import com.williamsel.mathstack.features.private.groupranking.domain.repositories.GrouprankingRepository
+import com.williamsel.mathstack.features.groupranking.data.datasource.api.GrouprankingApi
+import com.williamsel.mathstack.features.groupranking.data.mapper.toDomain
+import com.williamsel.mathstack.features.groupranking.domain.entities.GlobalRanking
+import com.williamsel.mathstack.features.groupranking.domain.entities.GroupRanking
+import com.williamsel.mathstack.features.groupranking.domain.repositories.GrouprankingRepository
 import javax.inject.Inject
 
 class GrouprankingRepositoryImpl @Inject constructor(

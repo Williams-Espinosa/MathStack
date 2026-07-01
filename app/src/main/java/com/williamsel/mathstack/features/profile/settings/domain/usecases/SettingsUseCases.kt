@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.settings.domain.usecases
+package com.williamsel.mathstack.features.settings.domain.usecases
 
-import com.williamsel.mathstack.features.private.settings.domain.entities.Settings
-import com.williamsel.mathstack.features.private.settings.domain.repositories.SettingsRepository
+import com.williamsel.mathstack.features.settings.domain.entities.Settings
+import com.williamsel.mathstack.features.settings.domain.repositories.SettingsRepository
 import javax.inject.Inject
 class GetSettingsUseCase @Inject constructor(
     private val repository: SettingsRepository

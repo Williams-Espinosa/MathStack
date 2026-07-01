@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.creategroups.domain.entities
+package com.williamsel.mathstack.features.creategroups.domain.entities
 
 data class CreateGroupParams(
     val name: String,

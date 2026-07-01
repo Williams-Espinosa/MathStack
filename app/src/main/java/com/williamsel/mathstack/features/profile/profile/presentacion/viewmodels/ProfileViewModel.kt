@@ -1,9 +1,9 @@
-package com.williamsel.mathstack.features.private.profile.presentacion.viewmodels
+package com.williamsel.mathstack.features.profile.profile.presentacion.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.williamsel.mathstack.features.private.profile.domain.usecases.ProfileUseCases
-import com.williamsel.mathstack.features.private.profile.presentacion.screens.ProfileUiState
+import com.williamsel.mathstack.features.profile.profile.domain.usecases.ProfileUseCases
+import com.williamsel.mathstack.features.profile.profile.presentacion.screens.ProfileUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

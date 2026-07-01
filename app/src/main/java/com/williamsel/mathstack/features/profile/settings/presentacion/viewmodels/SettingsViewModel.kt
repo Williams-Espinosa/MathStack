@@ -1,10 +1,10 @@
-package com.williamsel.mathstack.features.private.settings.presentacion.viewmodels
+package com.williamsel.mathstack.features.settings.presentacion.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.williamsel.mathstack.features.private.settings.domain.entities.Settings
-import com.williamsel.mathstack.features.private.settings.domain.usecases.SettingsUseCases
-import com.williamsel.mathstack.features.private.settings.presentacion.screens.SettingsUiState
+import com.williamsel.mathstack.features.settings.domain.entities.Settings
+import com.williamsel.mathstack.features.settings.domain.usecases.SettingsUseCases
+import com.williamsel.mathstack.features.settings.presentacion.screens.SettingsUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

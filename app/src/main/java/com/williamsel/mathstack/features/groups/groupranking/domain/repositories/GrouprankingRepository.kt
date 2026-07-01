@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.groupranking.domain.repositories
+package com.williamsel.mathstack.features.groupranking.domain.repositories
 
-import com.williamsel.mathstack.features.private.groupranking.domain.entities.GlobalRanking
-import com.williamsel.mathstack.features.private.groupranking.domain.entities.GroupRanking
+import com.williamsel.mathstack.features.groupranking.domain.entities.GlobalRanking
+import com.williamsel.mathstack.features.groupranking.domain.entities.GroupRanking
 
 interface GrouprankingRepository {
 

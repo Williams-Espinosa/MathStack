@@ -1,9 +1,9 @@
-package com.williamsel.mathstack.features.private.creategroups.data.mapper
+package com.williamsel.mathstack.features.creategroups.data.mapper
 
-import com.williamsel.mathstack.features.private.creategroups.data.models.CreatedGroupDto
-import com.williamsel.mathstack.features.private.creategroups.domain.entities.CreatedGroup
-import com.williamsel.mathstack.features.private.creategroups.domain.entities.CreateGroupParams
-import com.williamsel.mathstack.features.private.creategroups.data.models.CreateGroupRequestDto
+import com.williamsel.mathstack.features.creategroups.data.models.CreatedGroupDto
+import com.williamsel.mathstack.features.creategroups.domain.entities.CreatedGroup
+import com.williamsel.mathstack.features.creategroups.domain.entities.CreateGroupParams
+import com.williamsel.mathstack.features.creategroups.data.models.CreateGroupRequestDto
 
 fun CreateGroupParams.toDto(): CreateGroupRequestDto = CreateGroupRequestDto(
     name        = name,

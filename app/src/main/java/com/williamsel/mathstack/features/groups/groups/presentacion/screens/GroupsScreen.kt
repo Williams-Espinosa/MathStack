@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.groups.presentacion.screens
+package com.williamsel.mathstack.features.groups.presentacion.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -17,15 +17,28 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.ColorUtils
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.williamsel.mathstack.features.private.groups.domain.entities.Group
-import com.williamsel.mathstack.features.private.groups.presentacion.viewmodels.GroupsViewModel
-import com.williamsel.mathstack.ui.theme.*
+import com.williamsel.mathstack.features.groups.domain.entities.Group
+import com.williamsel.mathstack.features.groups.presentacion.viewmodels.GroupsViewModel
+import com.williamsel.mathstack.ui.theme.AzulPrimario
+import com.williamsel.mathstack.ui.theme.FondoPantalla
+import com.williamsel.mathstack.ui.theme.TextoPrincipal
+import com.williamsel.mathstack.ui.theme.TextoSecundario
+private val HPad      = 20.dp
+private val EspacioN   = 16.dp
+private val EspacioC   = 10.dp
+private val TituloSp   = 21f
+
+private val GrupoSp    = 18f
+private val SubSp      = 13f
+private val StatSp     = 19f
+private val LabelSp    = 12f
+private val BotonAlto  = 46.dp
 
 @Composable
 fun GroupsScreen(
@@ -61,150 +74,133 @@ private fun GroupsContent(
         }
     }
 
-    BoxWithConstraints(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(FondoPantalla)
-    ) {
-        val anchoTotal = maxWidth
-        val altoTotal  = maxHeight
-        val hPad       = (anchoTotal * 0.05f).coerceIn(14.dp, 32.dp)
-        val espacioN   = (altoTotal  * 0.022f).coerceIn(10.dp, 22.dp)
-        val espacioC   = (altoTotal  * 0.012f).coerceIn(6.dp,  14.dp)
-        val tituloSp   = (anchoTotal.value * 0.058f).coerceIn(18f, 24f)
-        val grupoSp    = (anchoTotal.value * 0.052f).coerceIn(16f, 21f)
-        val subSp      = (anchoTotal.value * 0.034f).coerceIn(12f, 15f)
-        val statSp     = (anchoTotal.value * 0.050f).coerceIn(16f, 22f)
-        val labelSp    = (anchoTotal.value * 0.032f).coerceIn(11f, 13f)
-        val botonAlto  = (altoTotal  * 0.058f).coerceIn(40.dp, 52.dp)
+    Scaffold(
+        containerColor = FondoPantalla,
+        snackbarHost   = { SnackbarHost(snackbarHostState) }
+    ) { paddingValues ->
 
-        Scaffold(
-            containerColor = FondoPantalla,
-            snackbarHost   = { SnackbarHost(snackbarHostState) }
-        ) { paddingValues ->
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(FondoPantalla)
+                .padding(paddingValues)
+                .padding(horizontal = HPad),
+            contentPadding       = PaddingValues(bottom = EspacioN),
+            verticalArrangement  = Arrangement.spacedBy(EspacioC)
+        ) {
 
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues)
-                    .padding(horizontal = hPad),
-                contentPadding       = PaddingValues(bottom = espacioN),
-                verticalArrangement  = Arrangement.spacedBy(espacioC)
-            ) {
-
-                item {
-                    Row(
+            item {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = EspacioN),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment     = Alignment.CenterVertically
+                ) {
+                    Text(
+                        "Grupos de Estudio",
+                        fontSize   = TituloSp.sp,
+                        fontWeight = FontWeight.Bold,
+                        color      = TextoPrincipal
+                    )
+                    IconButton(
+                        onClick  = onCreateGroup,
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = espacioN),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment     = Alignment.CenterVertically
+                            .size(38.dp)
+                            .clip(RoundedCornerShape(10.dp))
+                            .background(AzulPrimario.copy(alpha = 0.12f))
                     ) {
-                        Text(
-                            "Grupos de Estudio",
-                            fontSize   = tituloSp.sp,
-                            fontWeight = FontWeight.Bold,
-                            color      = TextoPrincipal
+                        Icon(
+                            Icons.Outlined.Add,
+                            contentDescription = "Crear grupo",
+                            tint     = AzulPrimario,
+                            modifier = Modifier.size(20.dp)
                         )
-                        IconButton(
-                            onClick  = onCreateGroup,
+                    }
+                }
+            }
+
+            item {
+                Surface(
+                    shape = RoundedCornerShape(14.dp),
+                    color = AzulPrimario
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Box(
                             modifier = Modifier
-                                .size(38.dp)
+                                .size(36.dp)
                                 .clip(RoundedCornerShape(10.dp))
-                                .background(AzulPrimario.copy(alpha = 0.12f))
+                                .background(Color.White.copy(alpha = 0.2f)),
+                            contentAlignment = Alignment.Center
                         ) {
                             Icon(
-                                Icons.Outlined.Add,
-                                contentDescription = "Crear grupo",
-                                tint     = AzulPrimario,
+                                Icons.Outlined.Group,
+                                contentDescription = null,
+                                tint     = Color.White,
                                 modifier = Modifier.size(20.dp)
+                            )
+                        }
+                        Spacer(Modifier.width(12.dp))
+                        Column {
+                            Text(
+                                "Mis Grupos",
+                                fontSize   = (SubSp + 1f).sp,
+                                fontWeight = FontWeight.Bold,
+                                color      = Color.White
+                            )
+                            Text(
+                                if (uiState.isLoading) "Cargando…"
+                                else "${uiState.myGroupsCount} grupos activos",
+                                fontSize = (SubSp - 1f).sp,
+                                color    = Color.White.copy(alpha = 0.85f)
                             )
                         }
                     }
                 }
+            }
 
+            if (uiState.isLoading) {
                 item {
-                    Surface(
-                        shape = RoundedCornerShape(14.dp),
-                        color = AzulPrimario
+                    Box(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 40.dp),
+                        contentAlignment = Alignment.Center
                     ) {
-                        Row(
-                            modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Box(
-                                modifier = Modifier
-                                    .size(36.dp)
-                                    .clip(RoundedCornerShape(10.dp))
-                                    .background(Color.White.copy(alpha = 0.2f)),
-                                contentAlignment = Alignment.Center
-                            ) {
-                                Icon(
-                                    Icons.Outlined.Group,
-                                    contentDescription = null,
-                                    tint     = Color.White,
-                                    modifier = Modifier.size(20.dp)
-                                )
-                            }
-                            Spacer(Modifier.width(12.dp))
-                            Column {
-                                Text(
-                                    "Mis Grupos",
-                                    fontSize   = (subSp + 1f).sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color      = Color.White
-                                )
-                                Text(
-                                    if (uiState.isLoading) "Cargando…"
-                                    else "${uiState.myGroupsCount} grupos activos",
-                                    fontSize = (subSp - 1f).sp,
-                                    color    = Color.White.copy(alpha = 0.85f)
-                                )
-                            }
-                        }
+                        CircularProgressIndicator(color = AzulPrimario)
                     }
                 }
+            }
 
-                if (uiState.isLoading) {
+            if (!uiState.isLoading) {
+                if (uiState.groups.isEmpty()) {
                     item {
                         Box(
                             modifier = Modifier.fillMaxWidth().padding(vertical = 40.dp),
                             contentAlignment = Alignment.Center
                         ) {
-                            CircularProgressIndicator(color = AzulPrimario)
-                        }
-                    }
-                }
-
-                if (!uiState.isLoading) {
-                    if (uiState.groups.isEmpty()) {
-                        item {
-                            Box(
-                                modifier = Modifier.fillMaxWidth().padding(vertical = 40.dp),
-                                contentAlignment = Alignment.Center
-                            ) {
-                                Text(
-                                    "Aún no perteneces a ningún grupo.\nPulsa + para crear uno.",
-                                    color     = TextoSecundario,
-                                    fontSize  = subSp.sp,
-                                    textAlign = TextAlign.Center
-                                )
-                            }
-                        }
-                    } else {
-                        items(uiState.groups, key = { it.id }) { group ->
-                            GroupCard(
-                                group       = group,
-                                isProcessing = uiState.processingGroupId == group.id,
-                                grupoSp     = grupoSp,
-                                subSp       = subSp,
-                                statSp      = statSp,
-                                labelSp     = labelSp,
-                                botonAlto   = botonAlto,
-                                onViewGroup = { onNavigateToGroup(group.id) },
-                                onLeave     = { onLeaveGroup(group.id) }
+                            Text(
+                                "Aún no perteneces a ningún grupo.\nPulsa + para crear uno.",
+                                color     = TextoSecundario,
+                                fontSize  = SubSp.sp,
+                                textAlign = TextAlign.Center
                             )
                         }
+                    }
+                } else {
+                    items(uiState.groups, key = { it.id }) { group ->
+                        GroupCard(
+                            group       = group,
+                            isProcessing = uiState.processingGroupId == group.id,
+                            grupoSp     = GrupoSp,
+                            subSp       = SubSp,
+                            statSp      = StatSp,
+                            labelSp     = LabelSp,
+                            botonAlto   = BotonAlto,
+                            onViewGroup = { onNavigateToGroup(group.id) },
+                            onLeave     = { onLeaveGroup(group.id) }
+                        )
                     }
                 }
             }
@@ -220,7 +216,7 @@ private fun GroupCard(
     subSp: Float,
     statSp: Float,
     labelSp: Float,
-    botonAlto: androidx.compose.ui.unit.Dp,
+    botonAlto: Dp,
     onViewGroup: () -> Unit,
     onLeave: () -> Unit
 ) {

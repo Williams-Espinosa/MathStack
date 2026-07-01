@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.settings.presentacion.screens
+package com.williamsel.mathstack.features.settings.presentacion.screens
 
 data class SettingsUiState(
     val notificationsEnabled: Boolean     = true,

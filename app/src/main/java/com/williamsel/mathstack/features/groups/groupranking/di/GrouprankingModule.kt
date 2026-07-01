@@ -1,11 +1,11 @@
-package com.williamsel.mathstack.features.private.groupranking.di
+package com.williamsel.mathstack.features.groupranking.di
 
-import com.williamsel.mathstack.features.private.groupranking.data.datasource.api.GrouprankingApi
-import com.williamsel.mathstack.features.private.groupranking.data.repositories.GrouprankingRepositoryImpl
-import com.williamsel.mathstack.features.private.groupranking.domain.repositories.GrouprankingRepository
-import com.williamsel.mathstack.features.private.groupranking.domain.usecases.GetGlobalRankingUseCase
-import com.williamsel.mathstack.features.private.groupranking.domain.usecases.GetGroupRankingUseCase
-import com.williamsel.mathstack.features.private.groupranking.domain.usecases.GrouprankingUseCases
+import com.williamsel.mathstack.features.groupranking.data.datasource.api.GrouprankingApi
+import com.williamsel.mathstack.features.groupranking.data.repositories.GrouprankingRepositoryImpl
+import com.williamsel.mathstack.features.groupranking.domain.repositories.GrouprankingRepository
+import com.williamsel.mathstack.features.groupranking.domain.usecases.GetGlobalRankingUseCase
+import com.williamsel.mathstack.features.groupranking.domain.usecases.GetGroupRankingUseCase
+import com.williamsel.mathstack.features.groupranking.domain.usecases.GrouprankingUseCases
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

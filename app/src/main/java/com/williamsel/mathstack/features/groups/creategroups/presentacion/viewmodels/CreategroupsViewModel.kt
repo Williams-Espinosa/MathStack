@@ -1,10 +1,10 @@
-package com.williamsel.mathstack.features.private.creategroups.presentacion.viewmodels
+package com.williamsel.mathstack.features.creategroups.presentacion.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.williamsel.mathstack.features.private.creategroups.domain.entities.CreateGroupParams
-import com.williamsel.mathstack.features.private.creategroups.domain.usecases.CreategroupsUseCases
-import com.williamsel.mathstack.features.private.creategroups.presentacion.screens.CreategroupsUiState
+import com.williamsel.mathstack.features.creategroups.domain.entities.CreateGroupParams
+import com.williamsel.mathstack.features.creategroups.domain.usecases.CreategroupsUseCases
+import com.williamsel.mathstack.features.creategroups.presentacion.screens.CreategroupsUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

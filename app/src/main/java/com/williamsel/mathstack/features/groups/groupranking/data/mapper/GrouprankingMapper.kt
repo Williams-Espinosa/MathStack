@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.groupranking.data.mapper
+package com.williamsel.mathstack.features.groupranking.data.mapper
 
-import com.williamsel.mathstack.features.private.groupranking.data.models.*
-import com.williamsel.mathstack.features.private.groupranking.domain.entities.*
+import com.williamsel.mathstack.features.groupranking.data.models.*
+import com.williamsel.mathstack.features.groupranking.domain.entities.*
 
 fun GroupRankingDto.toDomain(): GroupRanking = GroupRanking(
     groupInfo     = groupInfo.toDomain(),

@@ -48,7 +48,6 @@ import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.L
 import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.LessonStatus
 import  com.williamsel.mathstack.features.challenges.exercises.domain.entities.TheorySection
 import  com.williamsel.mathstack.features.challenges.exercises.presentacion.viewmodels.ExercisesViewModel
-import ru.noties.jlatexmath.JLatexMathDrawable
 
 private val BluePrimary   = Color(0xFF3D5AFE)
 private val BlueLight     = Color(0xFFEEF1FF)

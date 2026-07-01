@@ -20,7 +20,6 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -35,6 +34,7 @@ fun PrivacyScreen(
 ) {
     PrivacyContent(onBack = onBack)
 }
+
 private data class StaticSection(
     val icon: ImageVector,
     val title: String,
@@ -48,8 +48,8 @@ private fun PrivacyContent(onBack: () -> Unit) {
             .fillMaxSize()
             .background(FondoPantalla)
     ) {
-        val anchoTotal = maxWidth
-        val altoTotal  = maxHeight
+        val anchoTotal = this.maxWidth
+        val altoTotal  = this.maxHeight
 
         val hPad        = (anchoTotal * 0.06f).coerceIn(16.dp, 40.dp)
         val espacioN    = (altoTotal  * 0.022f).coerceIn(10.dp, 24.dp)
@@ -67,8 +67,6 @@ private fun PrivacyContent(onBack: () -> Unit) {
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
         ) {
-
-
             Box(
                 modifier = Modifier
                     .fillMaxWidth()

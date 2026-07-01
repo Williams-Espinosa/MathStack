@@ -1,9 +1,9 @@
-package com.williamsel.mathstack.features.private.streak.presentacion.viewmodels
+package com.williamsel.mathstack.features.profile.streak.presentacion.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.williamsel.mathstack.features.private.streak.domain.usecases.StreakUseCases
-import com.williamsel.mathstack.features.private.streak.presentacion.screens.StreakUiState
+import com.williamsel.mathstack.features.profile.streak.domain.usecases.StreakUseCases
+import com.williamsel.mathstack.features.profile.streak.presentacion.screens.StreakUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

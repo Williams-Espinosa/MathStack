@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.groupranking.presentacion.screens
+package com.williamsel.mathstack.features.groupranking.presentacion.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -19,18 +19,27 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.williamsel.mathstack.features.private.groupranking.domain.entities.*
-import com.williamsel.mathstack.features.private.groupranking.presentacion.viewmodels.GrouprankingViewModel
-import com.williamsel.mathstack.ui.theme.*
+import com.williamsel.mathstack.features.groupranking.domain.entities.*
+import com.williamsel.mathstack.features.groupranking.presentacion.viewmodels.GrouprankingViewModel
+import com.williamsel.mathstack.ui.theme.AzulPrimario
+import com.williamsel.mathstack.ui.theme.FondoPantalla
+import com.williamsel.mathstack.ui.theme.TextoPrincipal
+import com.williamsel.mathstack.ui.theme.TextoSecundario
 import java.text.NumberFormat
 import java.util.Locale
-
+private val HPad     = 20.dp
+private val EspacioN  = 16.dp
+private val EspacioC  = 10.dp
+private val TituloSp  = 21f
+private val NameSp    = 17f
+private val SubSp     = 13f
+private val XpSp      = 18f
+private val StatSp    = 19f
 
 @Composable
 fun GrouprankingScreen(
@@ -63,148 +72,132 @@ private fun GrouprankingContent(
         }
     }
 
-    BoxWithConstraints(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(FondoPantalla)
-    ) {
-        val anchoTotal = maxWidth
-        val altoTotal  = maxHeight
-        val hPad       = (anchoTotal * 0.05f).coerceIn(14.dp, 32.dp)
-        val espacioN   = (altoTotal  * 0.022f).coerceIn(10.dp, 22.dp)
-        val espacioC   = (altoTotal  * 0.014f).coerceIn(6.dp,  14.dp)
-        val tituloSp   = (anchoTotal.value * 0.058f).coerceIn(18f, 24f)
-        val nameSp     = (anchoTotal.value * 0.048f).coerceIn(15f, 20f)
-        val subSp      = (anchoTotal.value * 0.034f).coerceIn(11f, 14f)
-        val xpSp       = (anchoTotal.value * 0.050f).coerceIn(16f, 21f)
-        val statSp     = (anchoTotal.value * 0.052f).coerceIn(17f, 22f)
+    Scaffold(
+        containerColor = FondoPantalla,
+        snackbarHost   = { SnackbarHost(snackbarHostState) }
+    ) { padding ->
 
-        Scaffold(
-            containerColor = FondoPantalla,
-            snackbarHost   = { SnackbarHost(snackbarHostState) }
-        ) { padding ->
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(FondoPantalla)
+                .padding(padding)
+                .padding(horizontal = HPad),
+            contentPadding      = PaddingValues(bottom = EspacioN),
+            verticalArrangement = Arrangement.spacedBy(EspacioC)
+        ) {
 
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding)
-                    .padding(horizontal = hPad),
-                contentPadding      = PaddingValues(bottom = espacioN),
-                verticalArrangement = Arrangement.spacedBy(espacioC)
-            ) {
-
-                item {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = espacioN),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        IconButton(onClick = onNavigateBack) {
-                            Icon(
-                                Icons.Outlined.ArrowBack,
-                                contentDescription = "Volver",
-                                tint = TextoPrincipal
-                            )
-                        }
-                        Spacer(Modifier.width(4.dp))
-                        Text(
-                            "Ranking del Grupo",
-                            fontSize   = tituloSp.sp,
-                            fontWeight = FontWeight.Bold,
-                            color      = TextoPrincipal
+            item {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = EspacioN),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    IconButton(onClick = onNavigateBack) {
+                        Icon(
+                            Icons.Outlined.ArrowBack,
+                            contentDescription = "Volver",
+                            tint = TextoPrincipal
                         )
                     }
+                    Spacer(Modifier.width(4.dp))
+                    Text(
+                        "Ranking del Grupo",
+                        fontSize   = TituloSp.sp,
+                        fontWeight = FontWeight.Bold,
+                        color      = TextoPrincipal
+                    )
                 }
+            }
+
+            item {
+                TabSelector(
+                    selected  = uiState.selectedTab,
+                    onSelect  = onTabSelected,
+                    subSp     = SubSp
+                )
+            }
+
+            if (uiState.isLoading) {
+                item {
+                    Box(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 48.dp),
+                        contentAlignment = Alignment.Center
+                    ) { CircularProgressIndicator(color = AzulPrimario) }
+                }
+                return@LazyColumn
+            }
+
+            if (uiState.selectedTab == RankingTab.GROUP) {
+                val gr = uiState.groupRanking
+                if (gr == null) return@LazyColumn
 
                 item {
-                    TabSelector(
-                        selected  = uiState.selectedTab,
-                        onSelect  = onTabSelected,
-                        subSp     = subSp
+                    GroupHeroBanner(
+                        info   = gr.groupInfo,
+                        subSp  = SubSp,
+                        statSp = StatSp
                     )
                 }
 
-                if (uiState.isLoading) {
-                    item {
-                        Box(
-                            modifier = Modifier.fillMaxWidth().padding(vertical = 48.dp),
-                            contentAlignment = Alignment.Center
-                        ) { CircularProgressIndicator(color = AzulPrimario) }
-                    }
-                    return@LazyColumn
-                }
-
-                if (uiState.selectedTab == RankingTab.GROUP) {
-                    val gr = uiState.groupRanking
-                    if (gr == null) return@LazyColumn
-
-                    item {
-                        GroupHeroBanner(
-                            info   = gr.groupInfo,
-                            subSp  = subSp,
-                            statSp = statSp
+                item {
+                    Column {
+                        Text(
+                            "Miembros del Grupo",
+                            fontSize   = (TituloSp - 2f).sp,
+                            fontWeight = FontWeight.Bold,
+                            color      = TextoPrincipal
                         )
-                    }
-
-                    item {
-                        Column {
-                            Text(
-                                "Miembros del Grupo",
-                                fontSize   = (tituloSp - 2f).sp,
-                                fontWeight = FontWeight.Bold,
-                                color      = TextoPrincipal
-                            )
-                            Text(
-                                "Ranking por XP acumulado",
-                                fontSize = subSp.sp,
-                                color    = TextoSecundario
-                            )
-                        }
-                    }
-
-                    items(gr.members, key = { it.userId }) { member ->
-                        GroupMemberCard(
-                            member        = member,
-                            isCurrentUser = member.userId == gr.currentUserId,
-                            nameSp        = nameSp,
-                            subSp         = subSp,
-                            xpSp          = xpSp
+                        Text(
+                            "Ranking por XP acumulado",
+                            fontSize = SubSp.sp,
+                            color    = TextoSecundario
                         )
                     }
                 }
 
-                if (uiState.selectedTab == RankingTab.GLOBAL) {
-                    val glr = uiState.globalRanking
-                    if (glr == null) return@LazyColumn
+                items(gr.members, key = { it.userId }) { member ->
+                    GroupMemberCard(
+                        member        = member,
+                        isCurrentUser = member.userId == gr.currentUserId,
+                        nameSp        = NameSp,
+                        subSp         = SubSp,
+                        xpSp          = XpSp
+                    )
+                }
+            }
 
-                    item { GlobalHeroBanner(subSp = subSp, statSp = statSp) }
+            if (uiState.selectedTab == RankingTab.GLOBAL) {
+                val glr = uiState.globalRanking
+                if (glr == null) return@LazyColumn
 
-                    item {
-                        Column {
-                            Text(
-                                "Top Jugadores",
-                                fontSize   = (tituloSp - 2f).sp,
-                                fontWeight = FontWeight.Bold,
-                                color      = TextoPrincipal
-                            )
-                            Text(
-                                "Clasificación general por XP",
-                                fontSize = subSp.sp,
-                                color    = TextoSecundario
-                            )
-                        }
-                    }
+                item { GlobalHeroBanner(subSp = SubSp, statSp = StatSp) }
 
-                    items(glr.players, key = { it.userId }) { player ->
-                        GlobalPlayerCard(
-                            player        = player,
-                            isCurrentUser = player.userId == glr.currentUserId,
-                            nameSp        = nameSp,
-                            subSp         = subSp,
-                            xpSp          = xpSp
+                item {
+                    Column {
+                        Text(
+                            "Top Jugadores",
+                            fontSize   = (TituloSp - 2f).sp,
+                            fontWeight = FontWeight.Bold,
+                            color      = TextoPrincipal
+                        )
+                        Text(
+                            "Clasificación general por XP",
+                            fontSize = SubSp.sp,
+                            color    = TextoSecundario
                         )
                     }
+                }
+
+                items(glr.players, key = { it.userId }) { player ->
+                    GlobalPlayerCard(
+                        player        = player,
+                        isCurrentUser = player.userId == glr.currentUserId,
+                        nameSp        = NameSp,
+                        subSp         = SubSp,
+                        xpSp          = XpSp
+                    )
                 }
             }
         }
@@ -506,6 +499,7 @@ private fun GlobalPlayerCard(
         }
     }
 }
+
 @Composable
 private fun RankAvatar(rank: Int, badge: RankBadge, size: Dp) {
     when (badge) {

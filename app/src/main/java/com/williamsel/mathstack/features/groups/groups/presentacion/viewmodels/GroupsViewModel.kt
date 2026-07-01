@@ -1,9 +1,9 @@
-package com.williamsel.mathstack.features.private.groups.presentacion.viewmodels
+package com.williamsel.mathstack.features.groups.presentacion.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.williamsel.mathstack.features.private.groups.domain.usecases.GroupsUseCases
-import com.williamsel.mathstack.features.private.groups.presentacion.screens.GroupsUiState
+import com.williamsel.mathstack.features.groups.domain.usecases.GroupsUseCases
+import com.williamsel.mathstack.features.groups.presentacion.screens.GroupsUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,10 +1,10 @@
-package com.williamsel.mathstack.features.private.settings.data.repositories
+package com.williamsel.mathstack.features.settings.data.repositories
 
-import com.williamsel.mathstack.features.private.settings.data.datasource.api.SettingsApi
-import com.williamsel.mathstack.features.private.settings.data.mapper.toDomain
-import com.williamsel.mathstack.features.private.settings.data.mapper.toDto
-import com.williamsel.mathstack.features.private.settings.domain.entities.Settings
-import com.williamsel.mathstack.features.private.settings.domain.repositories.SettingsRepository
+import com.williamsel.mathstack.features.settings.data.datasource.api.SettingsApi
+import com.williamsel.mathstack.features.settings.data.mapper.toDomain
+import com.williamsel.mathstack.features.settings.data.mapper.toDto
+import com.williamsel.mathstack.features.settings.domain.entities.Settings
+import com.williamsel.mathstack.features.settings.domain.repositories.SettingsRepository
 import javax.inject.Inject
 
 class SettingsRepositoryImpl @Inject constructor(

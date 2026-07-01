@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.groupranking.presentacion.screens
+package com.williamsel.mathstack.features.groupranking.presentacion.screens
 
-import com.williamsel.mathstack.features.private.groupranking.domain.entities.GlobalRanking
-import com.williamsel.mathstack.features.private.groupranking.domain.entities.GroupRanking
+import com.williamsel.mathstack.features.groupranking.domain.entities.GlobalRanking
+import com.williamsel.mathstack.features.groupranking.domain.entities.GroupRanking
 
 enum class RankingTab { GROUP, GLOBAL }
 

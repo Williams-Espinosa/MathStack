@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.store.di
+package com.williamsel.mathstack.features.store.di
 
 import com.williamsel.mathstack.features.store.data.datasource.api.StoreApi
 import com.williamsel.mathstack.features.store.data.repositories.StoreRepositoryImpl

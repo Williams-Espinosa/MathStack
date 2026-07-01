@@ -1,6 +1,6 @@
-package com.williamsel.mathstack.features.private.streak.data.datasource.api
+package com.williamsel.mathstack.features.profile.streak.data.datasource.api
 
-import com.williamsel.mathstack.features.private.streak.data.models.StreakDto
+import com.williamsel.mathstack.features.profile.streak.data.models.StreakDto
 import retrofit2.http.GET
 
 interface StreakApi {

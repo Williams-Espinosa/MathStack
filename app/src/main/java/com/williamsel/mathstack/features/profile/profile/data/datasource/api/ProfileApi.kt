@@ -1,6 +1,6 @@
-package com.williamsel.mathstack.features.private.profile.data.datasource.api
+package com.williamsel.mathstack.features.profile.profile.data.datasource.api
 
-import com.williamsel.mathstack.features.private.profile.data.models.ProfileDto
+import com.williamsel.mathstack.features.profile.profile.data.models.ProfileDto
 import retrofit2.http.GET
 
 interface ProfileApi {

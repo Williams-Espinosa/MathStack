@@ -1,9 +1,9 @@
-package com.williamsel.mathstack.features.private.groups.data.mapper
+package com.williamsel.mathstack.features.groups.data.mapper
 
-import com.williamsel.mathstack.features.private.groups.data.models.GroupDto
-import com.williamsel.mathstack.features.private.groups.data.models.GroupsDto
-import com.williamsel.mathstack.features.private.groups.domain.entities.Group
-import com.williamsel.mathstack.features.private.groups.domain.entities.Groups
+import com.williamsel.mathstack.features.groups.data.models.GroupDto
+import com.williamsel.mathstack.features.groups.data.models.GroupsDto
+import com.williamsel.mathstack.features.groups.domain.entities.Group
+import com.williamsel.mathstack.features.groups.domain.entities.Groups
 
 fun GroupsDto.toDomain(): Groups = Groups(
     myGroupsCount = myGroupsCount,

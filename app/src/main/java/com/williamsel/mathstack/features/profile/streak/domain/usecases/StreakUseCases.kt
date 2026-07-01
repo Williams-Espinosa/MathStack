@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.streak.domain.usecases
+package com.williamsel.mathstack.features.profile.streak.domain.usecases
 
-import com.williamsel.mathstack.features.private.streak.domain.entities.Streak
-import com.williamsel.mathstack.features.private.streak.domain.repositories.StreakRepository
+import com.williamsel.mathstack.features.profile.streak.domain.entities.Streak
+import com.williamsel.mathstack.features.profile.streak.domain.repositories.StreakRepository
 import javax.inject.Inject
 class GetStreakUseCase @Inject constructor(
     private val repository: StreakRepository

@@ -1,10 +1,10 @@
-package com.williamsel.mathstack.features.private.streak.di
+package com.williamsel.mathstack.features.profile.streak.di
 
-import com.williamsel.mathstack.features.private.streak.data.datasource.api.StreakApi
-import com.williamsel.mathstack.features.private.streak.data.repositories.StreakRepositoryImpl
-import com.williamsel.mathstack.features.private.streak.domain.repositories.StreakRepository
-import com.williamsel.mathstack.features.private.streak.domain.usecases.GetStreakUseCase
-import com.williamsel.mathstack.features.private.streak.domain.usecases.StreakUseCases
+import com.williamsel.mathstack.features.profile.streak.data.datasource.api.StreakApi
+import com.williamsel.mathstack.features.profile.streak.data.repositories.StreakRepositoryImpl
+import com.williamsel.mathstack.features.profile.streak.domain.repositories.StreakRepository
+import com.williamsel.mathstack.features.profile.streak.domain.usecases.GetStreakUseCase
+import com.williamsel.mathstack.features.profile.streak.domain.usecases.StreakUseCases
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

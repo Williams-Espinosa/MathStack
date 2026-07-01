@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.profile.domain.entities
+package com.williamsel.mathstack.features.profile.profile.domain.entities
 
 data class Profile(
     val username: String,

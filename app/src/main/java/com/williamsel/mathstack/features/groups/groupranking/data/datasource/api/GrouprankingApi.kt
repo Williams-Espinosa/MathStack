@@ -1,7 +1,7 @@
-package com.williamsel.mathstack.features.private.groupranking.data.datasource.api
+package com.williamsel.mathstack.features.groupranking.data.datasource.api
 
-import com.williamsel.mathstack.features.private.groupranking.data.models.GlobalRankingDto
-import com.williamsel.mathstack.features.private.groupranking.data.models.GroupRankingDto
+import com.williamsel.mathstack.features.groupranking.data.models.GlobalRankingDto
+import com.williamsel.mathstack.features.groupranking.data.models.GroupRankingDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 

@@ -1,6 +1,6 @@
-package com.williamsel.mathstack.features.private.settings.data.datasource.api
+package com.williamsel.mathstack.features.settings.data.datasource.api
 
-import com.williamsel.mathstack.features.private.settings.data.models.SettingsDto
+import com.williamsel.mathstack.features.settings.data.models.SettingsDto
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

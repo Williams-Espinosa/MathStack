@@ -1,9 +1,9 @@
-package com.williamsel.mathstack.features.private.profile.data.repositories
+package com.williamsel.mathstack.features.profile.profile.data.repositories
 
-import com.williamsel.mathstack.features.private.profile.data.datasource.api.ProfileApi
-import com.williamsel.mathstack.features.private.profile.data.mapper.toDomain
-import com.williamsel.mathstack.features.private.profile.domain.entities.Profile
-import com.williamsel.mathstack.features.private.profile.domain.repositories.ProfileRepository
+import com.williamsel.mathstack.features.profile.profile.data.datasource.api.ProfileApi
+import com.williamsel.mathstack.features.profile.profile.data.mapper.toDomain
+import com.williamsel.mathstack.features.profile.profile.domain.entities.Profile
+import com.williamsel.mathstack.features.profile.profile.domain.repositories.ProfileRepository
 import javax.inject.Inject
 
 class ProfileRepositoryImpl @Inject constructor(

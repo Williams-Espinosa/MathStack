@@ -1,10 +1,10 @@
-package com.williamsel.mathstack.features.private.profile.di
+package com.williamsel.mathstack.features.profile.profile.di
 
-import com.williamsel.mathstack.features.private.profile.data.datasource.api.ProfileApi
-import com.williamsel.mathstack.features.private.profile.data.repositories.ProfileRepositoryImpl
-import com.williamsel.mathstack.features.private.profile.domain.repositories.ProfileRepository
-import com.williamsel.mathstack.features.private.profile.domain.usecases.GetProfileUseCase
-import com.williamsel.mathstack.features.private.profile.domain.usecases.ProfileUseCases
+import com.williamsel.mathstack.features.profile.profile.data.datasource.api.ProfileApi
+import com.williamsel.mathstack.features.profile.profile.data.repositories.ProfileRepositoryImpl
+import com.williamsel.mathstack.features.profile.profile.domain.repositories.ProfileRepository
+import com.williamsel.mathstack.features.profile.profile.domain.usecases.GetProfileUseCase
+import com.williamsel.mathstack.features.profile.profile.domain.usecases.ProfileUseCases
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

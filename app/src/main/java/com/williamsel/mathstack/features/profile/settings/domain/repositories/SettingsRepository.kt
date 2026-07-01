@@ -1,6 +1,6 @@
-package com.williamsel.mathstack.features.private.settings.domain.repositories
+package com.williamsel.mathstack.features.settings.domain.repositories
 
-import com.williamsel.mathstack.features.private.settings.domain.entities.Settings
+import com.williamsel.mathstack.features.settings.domain.entities.Settings
 
 interface SettingsRepository {
     suspend fun getSettings(): Result<Settings>

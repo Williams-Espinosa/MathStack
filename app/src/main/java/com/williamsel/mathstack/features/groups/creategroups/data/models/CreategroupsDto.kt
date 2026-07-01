@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.creategroups.data.models
+package com.williamsel.mathstack.features.creategroups.data.models
 
 import com.google.gson.annotations.SerializedName
 

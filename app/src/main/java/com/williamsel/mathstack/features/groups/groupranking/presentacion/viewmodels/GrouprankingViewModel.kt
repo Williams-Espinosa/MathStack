@@ -1,11 +1,11 @@
-package com.williamsel.mathstack.features.private.groupranking.presentacion.viewmodels
+package com.williamsel.mathstack.features.groupranking.presentacion.viewmodels
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.williamsel.mathstack.features.private.groupranking.domain.usecases.GrouprankingUseCases
-import com.williamsel.mathstack.features.private.groupranking.presentacion.screens.GrouprankingUiState
-import com.williamsel.mathstack.features.private.groupranking.presentacion.screens.RankingTab
+import com.williamsel.mathstack.features.groupranking.domain.usecases.GrouprankingUseCases
+import com.williamsel.mathstack.features.groupranking.presentacion.screens.GrouprankingUiState
+import com.williamsel.mathstack.features.groupranking.presentacion.screens.RankingTab
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

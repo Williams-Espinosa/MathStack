@@ -1,8 +1,8 @@
-package com.williamsel.mathstack.features.private.groupranking.domain.usecases
+package com.williamsel.mathstack.features.groupranking.domain.usecases
 
-import com.williamsel.mathstack.features.private.groupranking.domain.entities.GlobalRanking
-import com.williamsel.mathstack.features.private.groupranking.domain.entities.GroupRanking
-import com.williamsel.mathstack.features.private.groupranking.domain.repositories.GrouprankingRepository
+import com.williamsel.mathstack.features.groupranking.domain.entities.GlobalRanking
+import com.williamsel.mathstack.features.groupranking.domain.entities.GroupRanking
+import com.williamsel.mathstack.features.groupranking.domain.repositories.GrouprankingRepository
 import javax.inject.Inject
 
 class GetGroupRankingUseCase @Inject constructor(

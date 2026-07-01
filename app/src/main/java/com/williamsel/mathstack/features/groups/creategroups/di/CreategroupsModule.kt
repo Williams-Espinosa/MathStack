@@ -1,10 +1,10 @@
-package com.williamsel.mathstack.features.private.creategroups.di
+package com.williamsel.mathstack.features.creategroups.di
 
-import com.williamsel.mathstack.features.private.creategroups.data.datasource.api.CreategroupsApi
-import com.williamsel.mathstack.features.private.creategroups.data.repositories.CreategroupsRepositoryImpl
-import com.williamsel.mathstack.features.private.creategroups.domain.repositories.CreategroupsRepository
-import com.williamsel.mathstack.features.private.creategroups.domain.usecases.CreateGroupUseCase
-import com.williamsel.mathstack.features.private.creategroups.domain.usecases.CreategroupsUseCases
+import com.williamsel.mathstack.features.creategroups.data.datasource.api.CreategroupsApi
+import com.williamsel.mathstack.features.creategroups.data.repositories.CreategroupsRepositoryImpl
+import com.williamsel.mathstack.features.creategroups.domain.repositories.CreategroupsRepository
+import com.williamsel.mathstack.features.creategroups.domain.usecases.CreateGroupUseCase
+import com.williamsel.mathstack.features.creategroups.domain.usecases.CreategroupsUseCases
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

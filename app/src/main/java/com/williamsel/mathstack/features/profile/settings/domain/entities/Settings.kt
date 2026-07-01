@@ -1,4 +1,4 @@
-package com.williamsel.mathstack.features.private.settings.domain.entities
+package com.williamsel.mathstack.features.settings.domain.entities
 
 data class Settings(
     val notificationsEnabled: Boolean,
