@@ -28,6 +28,8 @@ hiltWork = "1.2.0"
 # Lottie
 lottie = "6.6.2"
 
+jlatexmath = "0.2.0"
+
 [libraries]
 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -94,7 +96,7 @@ coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-co
 
 # Lottie
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
-
+jlatexmath-android = { group = "ru.noties", name = "jlatexmath-android", version.ref = "jlatexmath" }
 androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 
 [plugins]

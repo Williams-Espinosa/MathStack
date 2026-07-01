@@ -100,6 +100,8 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
+    implementation(libs.jlatexmath.android)
+
     implementation(libs.androidx.navigation.compose)
 
     implementation("androidx.credentials:credentials:1.3.0")
